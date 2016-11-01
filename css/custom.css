@@ -134,7 +134,7 @@ img,
 }
 
 .alignright {
-  float: right;  
+  float: right;
   margin: 0 0 10px 25px !important;
 }
 
@@ -348,6 +348,8 @@ li {
         width: 100%;
         float: initial;
         position: initial;
+        opacity:  1 !important
+
     }
 
     hr{
@@ -359,6 +361,7 @@ li {
       position: relative !important;
       margin: 0 !important;
       position: initial;
+      width: 100%;
       transform-origin: initial;
       transform: scale(1, 1);
       -ms-transform: scale(1, 1);
@@ -383,4 +386,3 @@ li {
         margin-left: initial;
     }
 }
-
