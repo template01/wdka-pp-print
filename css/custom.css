@@ -3,15 +3,19 @@
    ----------------------------------------------- */
 
 body {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: antiquewhite;
+  font-stretch: expanded;
+  letter-spacing: 0.1pt;
 }
 
-p,h1,h2,h3, ul, ol{
+p,h1,h2,h3,ul,ol{
     font-weight: 400;
     line-height: 1.25;
-    font-size: 16pt;
+    font-size: 8.5pt;
     /*text-align: justify;*/
+    clear: right;
+
 }
 
 #siteHeader{
@@ -27,7 +31,6 @@ p,h1,h2,h3, ul, ol{
   padding-left: 120px;
   width: 50%;
   font-weight: 500;
-
 }
 
 #siteHeader h1 {
@@ -109,6 +112,19 @@ input[type="checkbox"]:hover:before {
  background:rgba(255,255,255,0.3);
 }
 
+#printA5 {
+  height: 20px;
+  width: 20px;
+  font-size: 13px;
+  margin: initial; padding: initial;
+  margin-right: 5px;
+}
+
+#printA5:before,
+#printA5:checked:before {
+   line-height:20px;
+}
+
 /* -------------
    Images
    ------------- */
@@ -117,32 +133,33 @@ img,
 .post img{
     display: block;
     /*width: 35%;*/
-    border: 3px outset #b3b3b3;
+    /*border: 3px outset #b3b3b3;*/
     height: auto;
     max-width: 40%;
-    margin: 10px 0;
+    padding: 5px;
   }
 
 .aligncenter {
-  margin-left: auto !important;
+  padding-left: 25%;
   margin-right: auto !important;
 }
 
 .alignleft {
-  float: left;
-  margin: 0 25px 10px 0 !important;
+  margin: 0;
+  margin-left: -25%;
+  /*float: left;*/
+  /*margin: 0 25px 10px -0px !important;*/
 }
 
 .alignright {
-  float: right;  
-  margin: 0 0 10px 25px !important;
+  float: right;
+  /*margin: 0 0 10px 25px !important;*/
 }
 
 figure {
-  margin: 20px 0;
   max-width: 40%;
   display: block;
-  padding: 0;
+  margin: 0;
 }
 
 figure img {
@@ -150,10 +167,12 @@ figure img {
 }
 
 figcaption {
-  font-size: 10pt;
-  letter-spacing: 0.02em;
-  font-weight: 500;
+  font-size: 6.5pt;
+  /*letter-spacing: 0.02em;*/
+  /*font-weight: 500;*/
   line-height: 1.25;
+  text-align: center;
+    padding: 5px;
 }
 
 /* -------------
@@ -162,16 +181,16 @@ figcaption {
 
 blockquote,
 blockquote p {
-    line-height: 1.5;
+    line-height: 1.6;
+    font-size: 7.5pt;
 }
 
 .postHeader{
-  font-size: 16pt !important;
   width: initial !important;
-  border: 4px outset #b3b3b3 !important;
-  padding: 10px !important;
-  line-height: 1.15;
-  letter-spacing: 0.01em;
+  padding-bottom: 0.5cm;
+  /*border: 5px outset #b3b3b3 !important;*/
+  /*text-align: center;*/
+  /*padding: 20px !important;*/
 }
 
 .post h1,
@@ -181,54 +200,35 @@ blockquote p {
 .post h5,
 .post h6 {
   clear: both;
-  text-align: center;
-  font-weight: 600;
-  padding: 8px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  font-weight: 500;
   text-transform: uppercase;
-  line-height: 1.25;
   letter-spacing: 0.02em;
+  font-size: 7pt;
+  margin-left: 0.5cm;
 }
 
 .post h1{
-  font-size: 11pt;
-  border: 3px inset #b3b3b3;
-  padding: 10px;
+  padding-top: 0.5cm;
+  /*border: 2px inset #b3b3b3;*/
 }
 
 .post h2 {
-  font-size: 11pt;
-  border: 3px ridge #b3b3b3;
+  /*border: 2px ridge #b3b3b3;*/
 }
 
 .post h3 {
-  font-size: 11pt;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
 }
 
 .post h4 {
-  font-size: 11pt;
-  border: 1px dashed #b3b3b3;
+  /*border: 1px dashed black;*/
 }
 
 .post h5 {
-  font-size: 11pt;
-  float: left;
-  border: 3px outset #b3b3b3;
-  margin: 0 15px 0 0;
-  max-width: 40%;
-  text-align: left;
   text-transform: initial;
 }
 
 .post h6 {
-  font-size: 10pt;
-  float: left;
-  border: 3px inset #b3b3b3;
-  margin: 0 15px 0 0;
-  text-align: left;
-  max-width: 25%;
   text-transform: initial;
 }
 
@@ -238,6 +238,8 @@ blockquote p {
 
 li {
   margin-bottom: 10px;
+  font-size: 7.5pt;
+  line-height: 1.5;
 }
 
 /* -----------------------------------------------
@@ -260,20 +262,22 @@ li {
 
 #selection .post{
     font-size: 10px;
-    width: 600px;
+    width: calc(600px - 25%);
     position: absolute;
     transform-origin: 0 0;
     transform: scale(0.40, 0.40);
     -ms-transform: scale(0.40, 0.40);
     -webkit-transform: scale(0.40, 0.40);
     background-color: white;
-    padding: 20px;
+    /*padding: 20px;*/
     max-height: 100vh;
     overflow: hidden;
-        border: 1px solid black;
-            animation: opacityAnimate 0.3s;
-}
+    border: 1px solid black;
+    animation: opacityAnimate 0.3s;
 
+    padding-left: 25% !important;
+    padding: 0;
+}
 
 #selection input{
     display: none;
@@ -324,14 +328,11 @@ li {
 }
 
 /* -----------------------------------------------
-   Print A5
+   Print A4
    ----------------------------------------------- */
 @page {
-  /*size: A4;*/
-  margin-left: 3cm;
-  margin-bottom: 3cm;
-  margin-right: 5mm;
-  margin-top: 5mm;
+  size: A4;
+  margin: 2cm;
 }
 
 @media print{
@@ -341,7 +342,6 @@ li {
     }
 
     #posts {display: none;}
-
 
     #selection{
         margin-top: 0px;
@@ -359,14 +359,12 @@ li {
       position: relative !important;
       margin: 0 !important;
       position: initial;
-      transform-origin: initial;
-      transform: scale(1, 1);
-      -ms-transform: scale(1, 1);
-      -webkit-transform: scale(1, 1);
+      transform: none;
       border:0 !important;
       max-height:99999999999999999px !important;
       overflow:visible !important;
       padding: 0px;
+      width: calc(100% - 25%);
     }
 
     .post .noBreak{

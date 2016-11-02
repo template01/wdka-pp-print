@@ -139,9 +139,14 @@
 
 	    }
 
-
-
-
-
-
 	});
+
+// $('link[title="printA5"]').prop('disabled', true);
+
+// $("#printA5").on("click", function(){
+// 	if($("#printA5").is(':checked')){
+// 		$('link[title="printA5"]').prop('disabled', false);
+// 	} else {
+// 	    $('link[title="printA5"]').prop('disabled', true);
+// 	}
+// }); 
