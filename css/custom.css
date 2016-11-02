@@ -153,7 +153,11 @@ img,
 
 .alignright {
   float: right;
+<<<<<<< HEAD
   /*margin: 0 0 10px 25px !important;*/
+=======
+  margin: 0 0 10px 25px !important;
+>>>>>>> e4d68ca8b2a4185551cd64db4452275bd22ae8be
 }
 
 figure {
@@ -348,6 +352,8 @@ li {
         width: 100%;
         float: initial;
         position: initial;
+        opacity:  1 !important
+
     }
 
     hr{
@@ -381,4 +387,3 @@ li {
         margin-left: initial;
     }
 }
-
