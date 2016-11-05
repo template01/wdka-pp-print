@@ -1,0 +1,84 @@
+#leftContent
+  #printpreview
+    display: none
+    position: absolute
+    min-height: 100vh
+    left: 0
+    background: white
+    width: 100%
+    .tablePost
+      .content
+        display: block
+      .tablePostMeta
+        .tablePostMetaIem
+          &.postSelect
+            display: none
+
+
+#rightContent
+  background: #E6E6E6
+  width: 20%
+  position: fixed
+  right: 0
+  height: 100%
+
+.sortingOptions
+  top: 0
+  position: fixed
+  width: 80%
+  height: 16px
+
+  button
+    width: 25%
+    float: left
+    padding: 0
+    margin: 0
+    border: 0
+    text-align: left
+
+
+#tableWrapper
+  width: 80%
+  float: left
+
+#table
+  padding: 0px
+  margin-top: 24px
+
+.tablePost
+  list-style: none
+  margin: 0
+  text-indent: 0
+  .content
+    display: none
+
+.tablePostMeta
+  float: left
+  width: 100%
+  display: inline-block
+  background: rgb(230,230,230)
+  .tablePostMetaIem
+    width: 25%
+    float: left
+    &.postSelect
+      background: #FF8585
+      &.selected
+        background: lime
+  p
+    margin: 0px
+
+.tablePostContent
+  background: rgb(248,248,255)
+  float: left
+  width: 100%
+  display: inline-block
+
+@media print
+  #rightContent
+    display: none
+
+  #tableWrapper
+    display: none
+
+  #printpreview
+    display: block !important
