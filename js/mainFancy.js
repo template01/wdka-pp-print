@@ -13,6 +13,7 @@ var tableMaker = (function() {
             id = element.id
             title = element.title.rendered
             excerpt = element.excerpt.rendered
+            // content = $.parseHTML(element.content.rendered)
             content = element.content.rendered
 
             if (typeof element.pure_taxonomies.publications !== "undefined") {
@@ -23,9 +24,10 @@ var tableMaker = (function() {
 
             }
             date = element.date
+            // console.log(content)
 
             deployTableInner.append(`
-            <li id="postid-`+ id +`" class="tablePost">
+            <li id="postid-` + id + `" class="tablePost">
               <div class="tablePostMeta">
                 <div class='tablePostMetaIem sort-title'><p>` + title + `</p></div>
                 <div class='tablePostMetaIem sort-date'><p>` + date + `</p></div>
@@ -35,7 +37,7 @@ var tableMaker = (function() {
               <div class="tablePostContent">
                 <h1>` + title + `</h1>
                 <div class='sort-excerpt'>` + excerpt + `</div>
-                <div class='content'>` + content + `</div>
+                <div class='content' data-content='` + content + `'></div>
               <div>
             </li>
           `)
@@ -72,36 +74,74 @@ var tableMaker = (function() {
             url: 'http://wdka-pp.template-studio.nl/wp-json/wp/v2/posts?filter[category_name]=wdka-pp&per_page=25',
             async: true,
             success: function(data, textStatus, request) {
-                console.log(data);
+                // console.log(data);
                 console.log(request.getResponseHeader('X-WP-TotalPages'));
-                 console.log(request.getResponseHeader('X-WP-Total'));
+                console.log(request.getResponseHeader('X-WP-Total'));
                 tableMaker.createTableCells(data, $('#table'))
-                createSortTable.listjsInit()
+                createSortTable.listjsInit(request.getResponseHeader('X-WP-TotalPages'))
+
             }
 
-  //           function(data, textStatus, request){
-  //      alert(request.getResponseHeader('some_header'));
-  // },
+            //           function(data, textStatus, request){
+            //      alert(request.getResponseHeader('some_header'));
+            // },
         });
     }
-    return {loadList: loadList, createTableCells: createTableCells, setupTable: setupTable, tableWrap: tableWrap};
+
+    var loadMoreList = function(page,postList) {
+        $.ajax({
+            type: 'GET',
+            url: 'http://wdka-pp.template-studio.nl/wp-json/wp/v2/posts?filter[category_name]=wdka-pp&per_page=25&page=' + page,
+            async: true,
+            success: function(data, textStatus, request) {
+                tableMaker.createTableCells(data, $('#table'))
+                // postList.reIndex()
+                selectorFunctions.setSelectedOnLoadMore(postList)
+
+            }
+        });
+    }
+
+    var loadAllList = function(pagesTotal,postList) {
+        for (i = 2; i-1 < pagesTotal; i++) {
+            tableMaker.loadMoreList(i, postList)
+        }
+
+    }
+
+    return {
+        loadAllList: loadAllList,
+        loadMoreList: loadMoreList,
+        loadList: loadList,
+        createTableCells: createTableCells,
+        setupTable: setupTable,
+        tableWrap: tableWrap
+    };
 })();
 
 var createSortTable = (function() {
 
-    var listjsInit = function() {
 
-        var options = {
-            valueNames: [
-                'sort-title', 'sort-excerpt', 'sort-publication', 'sort-date', 'sort-selected'
-            ],
-            listClass: 'list'
-        };
+  var ass = 'hey'
 
-        var userList = new List('tableWrapper', options);
-        createSortTable.listExternalSearch(userList)
-        selectorFunctions.setSelectedOnLoad(userList)
-        selectorFunctions.toggleSelector('.postSelect', userList)
+
+
+    var listjsInit = function(totalPages) {
+
+      var options = {
+          valueNames: [
+              'sort-title', 'sort-excerpt', 'sort-publication', 'sort-date', 'sort-selected'
+          ],
+          listClass: 'list'
+      };
+
+      var postList = new List('tableWrapper', options);
+
+        createSortTable.listExternalSearch(postList)
+        selectorFunctions.setSelectedOnLoad(postList)
+        selectorFunctions.toggleSelector('.postSelect',postList)
+        tableMaker.loadAllList(totalPages,postList)
+
 
     }
 
@@ -112,7 +152,7 @@ var createSortTable = (function() {
         });
     }
 
-    return {listjsInit: listjsInit, listExternalSearch: listExternalSearch};
+    return {listjsInit: listjsInit, listExternalSearch: listExternalSearch, ass:ass};
 })();
 
 var selectorFunctions = (function() {
@@ -139,17 +179,16 @@ var selectorFunctions = (function() {
                 selectorFunctions.setHashLocation($(this).attr('data-id'))
                 selectorFunctions.addToBasket($(this).parents('.tablePost'), $(this).attr('data-id'))
 
-                $("#postid-"+$(this).attr('data-id')).clone().appendTo("#printpreview")
+                content = $("#postid-" + $(this).attr('data-id')).find('.tablePostContent .content').attr('data-content')
 
-
-
+                $("#postid-" + $(this).attr('data-id')).clone().appendTo("#printpreview").find('.tablePostContent .content').html(content)
 
             } else {
                 $(this).text('no')
                 selectorFunctions.removeHashLocation($(this).attr('data-id'))
                 selectorFunctions.removeFromBasket($(this).attr('data-id'))
                 // console.log($("#printpreview #postid-"+$(this).attr('data-id')))
-                $("#printpreview #postid-"+$(this).attr('data-id')).remove()
+                $("#printpreview #postid-" + $(this).attr('data-id')).remove()
                 // console.log($("#printpreview #postid-"+$(this).attr('data-id')))
 
             }
@@ -163,14 +202,51 @@ var selectorFunctions = (function() {
         lochash = location.hash.substr(1),
         selected = lochash.substr(lochash.indexOf('selected=')).split('&')[0].split('=')[1];
 
-        if (typeof selected !== "undefined" && selected.length > 0 ) {
+        if (typeof selected !== "undefined" && selected.length > 0) {
             selected.split(",").map(function(id, index) {
-                console.log('asss' + id)
-                $('.postSelect[data-id=' + id + ']').addClass('selected').text('yes')
+                // console.log('asss' + id)
+                if($('#table').children().slice(-25).is("#postid-"+id)){
 
-                $("#postid-"+id).clone().appendTo("#printpreview")
+                  $('.postSelect[data-id=' + id + ']').addClass('selected').text('yes')
 
-                selectorFunctions.addToBasket($('.postSelect[data-id=' + id + ']').parents('.tablePost'), id)
+                  content = $("#postid-" + id).find('.tablePostContent .content').attr('data-content')
+                  $("#postid-" + id).clone().appendTo("#printpreview").find('.tablePostContent .content').html(content)
+
+                  selectorFunctions.addToBasket($('.postSelect[data-id=' + id + ']').parents('.tablePost'), id)
+                }
+
+            })
+        }
+
+        sortList.reIndex()
+
+    }
+
+    var setSelectedOnLoadMore = function(sortList) {
+
+        lochash = location.hash.substr(1),
+        selected = lochash.substr(lochash.indexOf('selected=')).split('&')[0].split('=')[1];
+
+        if (typeof selected !== "undefined" && selected.length > 0) {
+            selected.split(",").map(function(id, index) {
+              // console.log(id)
+              // console.log($('#table').children('.tablePost').slice(-2500).find($("#postid-" + id)))
+                // console.log($('#table').children('.tablePost').slice(-2500).find($("#postid-" + id)).length)
+                // console.log($('#table').children().slice(-2500).find($('.postSelect[data-id=' + 936 + ']')).length)
+
+
+                if($('#table').children().slice(-25).is("#postid-"+id)){
+
+                  $('.postSelect[data-id=' + id + ']').addClass('selected').text('yes')
+
+                  content = $("#postid-" + id).find('.tablePostContent .content').attr('data-content')
+                  $("#postid-" + id).clone().appendTo("#printpreview").find('.tablePostContent .content').html(content)
+
+                  selectorFunctions.addToBasket($('.postSelect[data-id=' + id + ']').parents('.tablePost'), id)
+
+                }
+
+
 
             })
         }
@@ -218,6 +294,7 @@ var selectorFunctions = (function() {
         removeFromBasket: removeFromBasket,
         addToBasket: addToBasket,
         setSelectedOnLoad: setSelectedOnLoad,
+        setSelectedOnLoadMore: setSelectedOnLoadMore,
         removeHashLocation: removeHashLocation,
         setHashLocation: setHashLocation,
         toggleSelector: toggleSelector,
@@ -241,12 +318,11 @@ var printpreview = (function() {
             array = selected.split(",")
 
             $("#printpreview").toggle()
+            $("#tableWrapper").toggle()
 
             array.map(function(id) {
-              console.log('ass')
-            // $("#postid-"+id).clone().appendTo("#printpreview")
-
-
+                console.log('ass')
+                // $("#postid-"+id).clone().appendTo("#printpreview")
 
             })
 
