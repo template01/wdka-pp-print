@@ -5,7 +5,8 @@
     min-height: 100vh
     left: 0
     background: white
-    width: 100%
+    // width: 100%
+    width: 80%
     .tablePost
       .sort-excerpt
         display: none
@@ -23,7 +24,25 @@
   position: fixed
   right: 0
   height: 100%
+  #showPrint
+    background: gray
+    &:after
+      color: white
+      content: "Print Preview"
+    &.showList
+      &:after
+        color: white
+        content: "Show List"
 
+  #emptyBasket
+    background: gray
+    &:after
+      color: white
+      content: "Empty Basket"
+    &.emptied
+      &:after
+        color: white
+        content: "Basket is Empty"
 .sortingOptions
   top: 0
   position: fixed
@@ -64,8 +83,20 @@
     float: left
     &.postSelect
       background: #FF8585
+      text-align: center
+      transition: background 0.1s
+      p
+        display: none
+      &:after
+        color: white
+        content: "✘"
       &.selected
         background: lime
+        &:after
+          color: white
+          content: "✔"
+
+
   p
     margin: 0px
 
@@ -84,3 +115,4 @@
 
   #printpreview
     display: block !important
+    width: 100%
