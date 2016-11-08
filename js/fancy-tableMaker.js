@@ -29,16 +29,21 @@ var tableMaker = (function() {
             deployTableInner.append(`
             <li id="postid-` + id + `" class="tablePost">
               <div class="tablePostMeta">
-                <div class='tablePostMetaIem sort-title'><p>` + title + `</p></div>
-                <div class='tablePostMetaIem sort-date'><p>` + date + `</p></div>
-                <div class='tablePostMetaIem sort-publication'><p>` + publication + `</p></div>
-                <div class='tablePostMetaIem sort-selected postSelect' data-id="` + id + `"><p>no</p></div>
+                <div class='tablePostMetaItem sort-title'><p>` + title + `</p></div>
+                <div class='tablePostMetaItem sort-date'><p>` + date + `</p></div>
+                <div class='tablePostMetaItem sort-publication'><p>` + publication + `</p></div>
+                <div class='tablePostMetaItem sort-selected postSelect' data-id="` + id + `"><p>no</p></div>
               </div>
               <div class="tablePostContent">
                 <h1>` + title + `</h1>
                 <div class='sort-excerpt'>` + excerpt + `</div>
                 <div class='content' data-content='` + content + `'></div>
-              <div>
+                <div class="tablePostReadMode">
+                  <div>Full article <span class="fa fa-long-arrow-right"></span></div>
+                </div>
+
+              </div>
+
             </li>
           `)
         });
