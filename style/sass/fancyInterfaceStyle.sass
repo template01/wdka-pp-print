@@ -57,10 +57,10 @@
     &:after
       color: white
       content: "Print Preview"
-    &.showList
+    &.makeSelection
       &:after
         color: white
-        content: "Show List"
+        content: "Please make a selection"
 
   #emptyBasket
     float: right
@@ -153,6 +153,7 @@
         padding: 0 $paddingMain/2
 
       &.back
+        cursor: pointer
         background: $tablePrimaryColorDark
 
       &.postSelect
