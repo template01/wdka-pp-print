@@ -8,16 +8,23 @@
     // width: 100%
     width: 80%
     .tablePost
+      display: flex
       h1
         width: 100%
       .tablePostReadMode
         display: none
-      .sort-excerpt
+      .sort-excerpt,.sort-title,.sort-date,.sort-publication
         display: none
+      .long
+        width: 75%
+
       .content
         display: block
       .tablePostMeta
+        // visibility: hidden
         z-index: 1
+        left: 0
+        top: 0
         position: fixed
         width: 80%
         .tablePostMetaItem

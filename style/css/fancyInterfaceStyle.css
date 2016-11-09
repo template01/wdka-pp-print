@@ -1,21 +1,17 @@
 /*
-Error: Undefined variable: "$defaultFontSizeParagraph".
-        on line 7 of style/sass/fancyInterfaceStyle.sass
+Error: Undefined variable: "$tablePrimaryColor".
+        on line 2 of style/sass/fancyInterfaceStyle.sass
 
-2:   background: #E6E6E6
+1: #rightContent
+2:   background: $tablePrimaryColor
 3:   width: 20%
 4:   position: fixed
 5:   right: 0
 6:   height: 100%
 7:   font-size: $defaultFontSizeParagraph
-8:   #topContent
-9:     .search
-10:       border: 0
-11:       padding: 0
-12:       margin: 0
 
 Backtrace:
-style/sass/fancyInterfaceStyle.sass:7
+style/sass/fancyInterfaceStyle.sass:2
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
@@ -67,4 +63,4 @@ style/sass/fancyInterfaceStyle.sass:7
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$defaultFontSizeParagraph\".\A         on line 7 of style/sass/fancyInterfaceStyle.sass\A \A 2:   background: #E6E6E6\A 3:   width: 20%\A 4:   position: fixed\A 5:   right: 0\A 6:   height: 100%\A 7:   font-size: $defaultFontSizeParagraph\A 8:   #topContent\A 9:     .search\A 10:       border: 0\A 11:       padding: 0\A 12:       margin: 0"; }
+  content: "Error: Undefined variable: \"$tablePrimaryColor\".\A         on line 2 of style/sass/fancyInterfaceStyle.sass\A \A 1: #rightContent\A 2:   background: $tablePrimaryColor\A 3:   width: 20%\A 4:   position: fixed\A 5:   right: 0\A 6:   height: 100%\A 7:   font-size: $defaultFontSizeParagraph"; }

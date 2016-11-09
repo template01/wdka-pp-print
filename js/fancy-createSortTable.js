@@ -26,7 +26,7 @@ var createSortTable = (function() {
     }
 
     var listExternalSearch = function(searchObject) {
-        $("#rightContent #topContent").append("<input class='search' placeholder='Search' />")
+        $("#rightContent #topContent").append("<input class='search' placeholder='&#xF002; Search...' style='font-family: FontAwesome, texgyreadventorregular !important'/>")
         $("#rightContent .search").bind("change paste keyup", function() {
             searchObject.search($(this).val());
         });

@@ -8,22 +8,22 @@ var printPreview = (function() {
 
         $(document).on('click', showEvent, function() {
 
-            $(this).toggleClass('showList')
+            // $(this).toggleClass('showList')
+
+
+
+            $("#rightContent").children().toggleClass('disable')
             $("#printpreview").toggle()
             $("#tableWrapper").toggle()
-
-            // lochash = location.hash.substr(1),
-            // selected = lochash.substr(lochash.indexOf('selected=')).split('&')[0].split('=')[1];
-
-            // if (typeof selected !== "undefined" && selected.length > 0) {
-            //     array = selected.split(",")
-            //     array.map(function(id) {
-            //         console.log('ass')
-            //         // $("#postid-"+id).clone().appendTo("#printpreview")
-            //
-            //     })
-            //
-            // }
+            $("#printpreview").find('.tablePostMeta').empty()
+                //
+                if($('#printpreview:in-viewport').length>0){
+                  $("#printpreview").find('.tablePostMeta').append(`
+                    <div id="printpreviewSelection" class="tablePostMetaItem long"><p>Print Preview: </p></div>
+                    <div class="tablePostMetaItem back"><p><span class="fa fa-long-arrow-left"></span> Back to list<p></div>
+                    `)
+                  $("#basket .basketItem").each(function(){$("#printpreviewSelection p").append($(this).find('p').text()+', ')})
+                }
 
         })
     }
@@ -38,6 +38,11 @@ var printPreview = (function() {
         this.createShowEventElements()
     }
 
-    return {createShowEventElements: createShowEventElements, addToPrintPreview: addToPrintPreview, getPrintPreview: getPrintPreview, initPrintpreview: initPrintpreview};
+    return {
+        createShowEventElements: createShowEventElements,
+        addToPrintPreview: addToPrintPreview,
+        getPrintPreview: getPrintPreview,
+        initPrintpreview: initPrintpreview
+    };
 
 })();
