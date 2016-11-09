@@ -71,7 +71,7 @@ var tableMaker = (function() {
                   Sort Publication
                 </button>
                 <button class="sort" data-sort="sort-selected">
-                Sort in Basket
+                Sort Print Selection
               </button>
               </div>
               <ul id='table' class='list'></ul>

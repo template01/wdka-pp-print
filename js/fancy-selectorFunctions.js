@@ -6,6 +6,7 @@ var selectorFunctions = (function() {
             ` + jqueryElement.find('.sort-title').html() + `
           </div>
         `)
+        setEmptyBasketIcon(true)
     }
 
     var removeFromBasket = function(id) {
@@ -132,7 +133,7 @@ var selectorFunctions = (function() {
     }
 
     createEmptyBasketElements = function() {
-        $("#rightContent #basketWrapper #basketCounter").append('<div id="emptyBasket" class="fa"></div>')
+        $("#rightContent #basketWrapper #basketCounter").append('<span id="emptyBasket" class="fa fa-trash-o"></span>')
     }
 
     setEmptyBasketIcon=function(state){
