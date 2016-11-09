@@ -16,6 +16,7 @@
       margin: 0
       width: 100%
       height: calc(22px + #{$paddingMain})
+      line-height: calc(22px + #{$paddingMain})
       padding: $paddingMain/2
       background: $tableTertiaryColor
       color: black
@@ -82,12 +83,12 @@
     z-index: 1
     width: 80%
     height: calc(22px + #{$paddingMain})
-    border-bottom: 1px solid $secondaryColor
+    border-bottom: 2px solid $secondaryColor
     .sort
       padding: $paddingMain/2
       background: $tablePrimaryColor
     .sort:not(:last-child)
-      border-right: 1px solid $secondaryColor
+      border-right: 2px solid $secondaryColor
 
 
     button
@@ -143,7 +144,7 @@
       float: left
       height: 100%
       &:not(:last-child)
-        border-right: 1px solid $secondaryColor
+        border-right: 2px solid $secondaryColor
       p
         display: inline-block
         white-space: nowrap

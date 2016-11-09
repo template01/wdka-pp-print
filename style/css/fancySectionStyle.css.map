@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAKI,2CAAgB;EACd,oBAAoB,EAAE,CAAC;EACvB,iBAAiB,EAAE,CAAC;EACpB,YAAY,EAAE,CAAC;EACf,kBAAkB,EAAE,IAAI;EACxB,eAAe,EAAE,IAAI;EACrB,UAAU,EAAE,IAAI",
+"mappings": "AAKI,2CAAgB,CACd,oBAAoB,CAAE,CAAC,CACvB,iBAAiB,CAAE,CAAC,CACpB,YAAY,CAAE,CAAC,CACf,kBAAkB,CAAE,IAAI,CACxB,eAAe,CAAE,IAAI,CACrB,UAAU,CAAE,IAAI",
 "sources": ["../sass/fancySectionStyle.sass"],
 "names": [],
 "file": "fancySectionStyle.css"
