@@ -5,8 +5,6 @@ body {
 
 p, h1, h2, h3, ul, ol {
   font-weight: 400;
-  line-height: 1.2;
-  clear: right;
   letter-spacing: 0.05em; }
 
 h1 {
@@ -17,7 +15,6 @@ h1 {
 
 p {
   font-size: 11pt;
-  margin-top: 0;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;

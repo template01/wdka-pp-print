@@ -59,5 +59,10 @@
     margin: 20px 0;
     padding: 25px 0;
     font-size: 15pt; }
+  #leftContent #printpreview .tablePost p, #leftContent #printpreview .tablePost h1, #leftContent #printpreview .tablePost h2, #leftContent #printpreview .tablePost h3, #leftContent #printpreview .tablePost ul, #leftContent #printpreview .tablePost ol, #leftContent #readpreview .tablePost p, #leftContent #readpreview .tablePost h1, #leftContent #readpreview .tablePost h2, #leftContent #readpreview .tablePost h3, #leftContent #readpreview .tablePost ul, #leftContent #readpreview .tablePost ol {
+    line-height: 1.2;
+    clear: right; }
+  #leftContent #printpreview .tablePost p, #leftContent #readpreview .tablePost p {
+    margin-top: 0; }
 
 /*# sourceMappingURL=fancyPrintPreview_readPreviewStyle.css.map */
