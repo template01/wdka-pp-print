@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$defaultFontSizeParagraph".
-        on line 17 of style/sass/fancyDefaultTypoStyle.sass
+        on line 20 of style/sass/fancyDefaultTypoStyle.sass
 
-12:   text-transform: uppercase
-13:   letter-spacing: 0.02em
-14:   font-size: 15pt
 15: 
-16: p
-17:   font-size: $defaultFontSizeParagraph
-18:   -webkit-hyphens: auto
-19:   -moz-hyphens: auto
-20:   -ms-hyphens: auto
-21:   hyphens: auto
-22: 
+16: h2
+17:   font-size: 100pt
+18: 
+19: p
+20:   font-size: $defaultFontSizeParagraph
+21:   -webkit-hyphens: auto
+22:   -moz-hyphens: auto
+23:   -ms-hyphens: auto
+24:   hyphens: auto
+25: 
 
 Backtrace:
-style/sass/fancyDefaultTypoStyle.sass:17
+style/sass/fancyDefaultTypoStyle.sass:20
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
@@ -67,4 +67,4 @@ style/sass/fancyDefaultTypoStyle.sass:17
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$defaultFontSizeParagraph\".\A         on line 17 of style/sass/fancyDefaultTypoStyle.sass\A \A 12:   text-transform: uppercase\A 13:   letter-spacing: 0.02em\A 14:   font-size: 15pt\A 15: \A 16: p\A 17:   font-size: $defaultFontSizeParagraph\A 18:   -webkit-hyphens: auto\A 19:   -moz-hyphens: auto\A 20:   -ms-hyphens: auto\A 21:   hyphens: auto\A 22: "; }
+  content: "Error: Undefined variable: \"$defaultFontSizeParagraph\".\A         on line 20 of style/sass/fancyDefaultTypoStyle.sass\A \A 15: \A 16: h2\A 17:   font-size: 100pt\A 18: \A 19: p\A 20:   font-size: $defaultFontSizeParagraph\A 21:   -webkit-hyphens: auto\A 22:   -moz-hyphens: auto\A 23:   -ms-hyphens: auto\A 24:   hyphens: auto\A 25: "; }
