@@ -4,6 +4,7 @@
   position: fixed
   right: 0
   height: 100%
+  font-size: $defaultFontSizeParagraph
   #topContent
     .search
       border: 0
@@ -11,9 +12,28 @@
       margin: 0
       width: 100%
       height: calc(22px + #{$paddingMain})
+      padding: $paddingMain/2
+
+  #basket
+    .basketItem
+      padding: $paddingMain/2
+      p
+        margin: 0
+        &:before
+          content: "- "
+
+
+  #basketCounter
+    background: gray
+    padding: $paddingMain/2
+    &:after
+      color: white
+      content: "Basket"
 
   #showPrint
     background: gray
+    padding: $paddingMain/2
+
     &:after
       color: white
       content: "Print Preview"
@@ -23,14 +43,15 @@
         content: "Show List"
 
   #emptyBasket
-    background: gray
+    float: right
+
     &:after
       color: white
-      content: "Empty Basket"
+      // content: "<span class='fa fa-trash'></span>"
     &.emptied
       &:after
         color: white
-        content: "Basket is Empty"
+        // content: "<span class='fa fa-trash-o'></span>"
 
 
 

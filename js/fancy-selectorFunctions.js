@@ -132,7 +132,15 @@ var selectorFunctions = (function() {
     }
 
     createEmptyBasketElements = function() {
-        $("#rightContent #basketWrapper").append('<div id="emptyBasket"></div>')
+        $("#rightContent #basketWrapper #basketCounter").append('<div id="emptyBasket" class="fa"></div>')
+    }
+
+    setEmptyBasketIcon=function(state){
+      if(state == false){
+        $("#emptyBasket").removeClass('fa-trash').addClass('fa-trash-o')
+      }else{
+        $("#emptyBasket").removeClass('fa-trash-o').addClass('fa-trash')
+      }
     }
 
     var emptyBasket = function(emptyEvent) {
@@ -140,31 +148,36 @@ var selectorFunctions = (function() {
         $(document).on('click', emptyEvent, function() {
 
             if ($("#printpreview").children().length > 0) {
-                $(this).removeClass('emptied')
+                setEmptyBasketIcon(false)
                 location.hash = ""
                 $("#basket").empty()
                 $("#printpreview").empty()
                 $(".postSelect").removeClass("selected")
 
-            } else {
-                $(this).addClass('emptied')
-                window.setTimeout(function(){$(emptyEvent).removeClass('emptied')},500)
             }
 
         })
     }
 
+    createBasketCounter = function() {
+        $("#rightContent #basketWrapper").prepend('<div id="basketCounter"></div>')
+    }
+
     var initSelector = function() {
         this.emptyBasket('#emptyBasket')
+        this.createBasketCounter()
         this.createEmptyBasketElements()
+
 
     }
 
     return {
+        createBasketCounter:createBasketCounter,
         createEmptyBasketElements: createEmptyBasketElements,
         emptyBasket: emptyBasket,
         removeFromBasket: removeFromBasket,
         addToBasket: addToBasket,
+        setEmptyBasketIcon:setEmptyBasketIcon,
         setSelectedOnLoad: setSelectedOnLoad,
         setSelectedOnLoadMore: setSelectedOnLoadMore,
         removeHashLocation: removeHashLocation,

@@ -1,48 +1,24 @@
 /*
-Error: Undefined variable: "$paddingMain".
-        on line 13 of style/sass/fancyInterfaceStyle.sass
+Error: Undefined variable: "$defaultFontSizeParagraph".
+        on line 7 of style/sass/fancyInterfaceStyle.sass
 
-8:     .search
-9:       border: 0
-10:       padding: 0
-11:       margin: 0
-12:       width: 100%
-13:       height: calc(22px + #{$paddingMain})
-14: 
-15:   #showPrint
-16:     background: gray
-17:     &:after
-18:       color: white
+2:   background: #E6E6E6
+3:   width: 20%
+4:   position: fixed
+5:   right: 0
+6:   height: 100%
+7:   font-size: $defaultFontSizeParagraph
+8:   #topContent
+9:     .search
+10:       border: 0
+11:       padding: 0
+12:       margin: 0
 
 Backtrace:
-style/sass/fancyInterfaceStyle.sass:13
+style/sass/fancyInterfaceStyle.sass:7
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/interpolation.rb:170:in `_perform'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `map'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `map'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
@@ -91,4 +67,4 @@ style/sass/fancyInterfaceStyle.sass:13
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$paddingMain\".\A         on line 13 of style/sass/fancyInterfaceStyle.sass\A \A 8:     .search\A 9:       border: 0\A 10:       padding: 0\A 11:       margin: 0\A 12:       width: 100%\A 13:       height: calc(22px + #{$paddingMain})\A 14: \A 15:   #showPrint\A 16:     background: gray\A 17:     &:after\A 18:       color: white"; }
+  content: "Error: Undefined variable: \"$defaultFontSizeParagraph\".\A         on line 7 of style/sass/fancyInterfaceStyle.sass\A \A 2:   background: #E6E6E6\A 3:   width: 20%\A 4:   position: fixed\A 5:   right: 0\A 6:   height: 100%\A 7:   font-size: $defaultFontSizeParagraph\A 8:   #topContent\A 9:     .search\A 10:       border: 0\A 11:       padding: 0\A 12:       margin: 0"; }
