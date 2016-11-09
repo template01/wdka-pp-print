@@ -1,0 +1,145 @@
+#rightContent
+  background: #E6E6E6
+  width: 20%
+  position: fixed
+  right: 0
+  height: 100%
+  #topContent
+    .search
+      border: 0
+      padding: 0
+      margin: 0
+      width: 100%
+      height: calc(22px + #{$paddingMain})
+
+  #showPrint
+    background: gray
+    &:after
+      color: white
+      content: "Print Preview"
+    &.showList
+      &:after
+        color: white
+        content: "Show List"
+
+  #emptyBasket
+    background: gray
+    &:after
+      color: white
+      content: "Empty Basket"
+    &.emptied
+      &:after
+        color: white
+        content: "Basket is Empty"
+
+
+
+#tableWrapper
+  width: 80%
+  float: left
+
+  .sortingOptions
+    top: 0
+    line-height: 0
+    position: fixed
+    z-index: 1
+    width: 80%
+    height: calc(22px + #{$paddingMain})
+    border-bottom: 1px solid $secondaryColor
+    .sort
+      padding: $paddingMain/2
+    .sort:not(:last-child)
+      border-right: 1px solid $secondaryColor
+
+
+    button
+      width: 25%
+      float: left
+      height: 100%
+      padding: 0
+      margin: 0
+      border: 0
+      text-align: left
+
+
+
+.tablePost
+  .tablePostContent
+    padding: $paddingMain/2
+    background: rgb(248,248,255)
+    float: left
+    width: 100%
+    display: inline-block
+    position: relative
+    h1
+      width: 75%
+    .sort-excerpt
+      width: 75%
+    .tablePostReadMode
+      background: rgb(240,248,255)
+      width: 25%
+      // float: right
+      position: absolute
+      right: 0
+      top: 0
+      height: 100%
+      div
+        text-align: center
+        position: absolute
+        top: 50%
+        left: 0%
+        width: 100%
+        transform: translate(0%, -50%)
+
+  .tablePostMeta
+    float: left
+    height: calc(22px + #{$paddingMain})
+    line-height: calc(22px + #{$paddingMain})
+    width: 100%
+    display: inline-block
+    background: rgb(230,230,230)
+    .tablePostMetaItem
+      width: 25%
+      float: left
+      height: 100%
+      &:not(:last-child)
+        border-right: 1px solid $secondaryColor
+      p
+        display: inline-block
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        width: 100%
+        padding: 0 $paddingMain/2
+
+      &.back
+        background: gray
+
+      &.postSelect
+        background: #FF8585
+        text-align: center
+        transition: background 0.1s
+        p
+          display: none
+
+        &:after
+          color: white
+          content: "✘"
+        &.selected
+          background: lime
+          &:after
+            color: white
+            content: "✔"
+    p
+      margin: 0px
+
+#table
+  padding: 0px
+  margin-top: calc(22px + #{$paddingMain})
+
+.tablePost
+  list-style: none
+  margin: 0
+  text-indent: 0
+  .content
+    display: none

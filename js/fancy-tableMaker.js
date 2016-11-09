@@ -21,8 +21,15 @@ var tableMaker = (function() {
 
             } else {
                 publication = 'undefined'
-
             }
+
+            if (typeof element.pure_taxonomies.publication_sections !== "undefined") {
+                publication_section = element.pure_taxonomies.publication_sections[0].slug
+
+            } else {
+                publication_section = 'default'
+            }
+
             date = element.date
             // console.log(content)
 
@@ -34,7 +41,7 @@ var tableMaker = (function() {
                 <div class='tablePostMetaItem sort-publication'><p>` + publication + `</p></div>
                 <div class='tablePostMetaItem sort-selected postSelect' data-id="` + id + `"><p>no</p></div>
               </div>
-              <div class="tablePostContent">
+              <div class="tablePostContent section-` + publication_section + `">
                 <h1>` + title + `</h1>
                 <div class='sort-excerpt'>` + excerpt + `</div>
                 <div class='content' data-content='` + content + `'></div>
@@ -64,7 +71,7 @@ var tableMaker = (function() {
                   Sort Publication
                 </button>
                 <button class="sort" data-sort="sort-selected">
-                Sort Selected
+                Sort in Basket
               </button>
               </div>
               <ul id='table' class='list'></ul>

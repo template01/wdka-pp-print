@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,YAAY;EACV,aAAa;IACX,OAAO,EAAE,IAAI;;EAEf,aAAa;IACX,OAAO,EAAE,eAAe;;EAE1B,YAAY;IACV,OAAO,EAAE,eAAe;;EAG1B,aAAa;IACX,OAAO,EAAE,gBAAgB;IACzB,KAAK,EAAE,eAAe;IACtB,4BAAc;MACZ,OAAO,EAAE,IAAI;;EAEjB,aAAa;IACX,OAAO,EAAE,eAAe;;;IAGxB,IAAI,EAAE,EAAE;IACR,MAAM,EAAE,GAAG",
+"sources": ["../sass/fancyResetPrintStyle.sass"],
+"names": [],
+"file": "fancyResetPrintStyle.css"
+}

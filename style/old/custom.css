@@ -1,0 +1,388 @@
+/* -----------------------------------------------
+   General
+   ----------------------------------------------- */
+
+body {
+  font-family: 'Heebo', sans-serif;
+  background-color: antiquewhite;
+}
+
+p,h1,h2,h3, ul, ol{
+    font-weight: 400;
+    line-height: 1.25;
+    font-size: 16pt;
+    /*text-align: justify;*/
+}
+
+#siteHeader{
+  background: antiniquewhite;
+  width: 100%;
+  display: inline-block;
+}
+
+#siteHeader h1,
+#siteHeader p{
+  /*text-align: center;*/
+  color: black;
+  padding-left: 120px;
+  width: 50%;
+  font-weight: 500;
+
+}
+
+#siteHeader h1 {
+}
+
+/* -----------------------------------------------
+   Posts
+   ----------------------------------------------- */
+
+#posts{
+    float: left;
+}
+
+#posts .post{
+    max-width: 100%;
+    width: calc(60% - 172px);
+    padding: 50px;
+    margin: 50px 50px 50px 70px;
+    background: white;
+    height: 350px;
+    overflow: hidden;
+}
+
+#posts .post:before {
+position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 -300px 200px -200px antiquewhite inset;
+}
+
+#posts input{
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+input[type="checkbox"] {
+ -webkit-appearance:none;/* Hides the default checkbox style */
+ height:30px;
+ margin: 20px;
+ width:30px;
+ cursor:pointer;
+ position:relative;
+ -webkit-transition: .15s;
+ transition: .15s;
+ border-radius:100%;
+ background-color:transparent;
+ color: black;
+ box-shadow: 0px 0px 0 2px inset;
+ font-size: 20px;
+}
+
+input[type="checkbox"]:checked {
+ background-color:black;
+}
+
+input[type="checkbox"]:before, input[type="checkbox"]:checked:before {
+ position:absolute;
+ top:0;
+ left:0;
+ width:100%;
+ height:100%;
+ line-height:30px;
+ text-align:center;
+ color: black;
+ content: '✔';
+}
+
+input[type="checkbox"]:checked:before {
+ content: '✘';
+ color: white;
+}
+
+input[type="checkbox"]:hover:before {
+ background:rgba(255,255,255,0.3);
+}
+
+/* -------------
+   Images
+   ------------- */
+
+img,
+.post img{
+    display: block;
+    /*width: 35%;*/
+    border: 3px outset #b3b3b3;
+    height: auto;
+    max-width: 40%;
+    margin: 10px 0;
+  }
+
+.aligncenter {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.alignleft {
+  float: left;
+  margin: 0 25px 10px 0 !important;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 10px 25px !important;
+}
+
+figure {
+  margin: 20px 0;
+  max-width: 40%;
+  display: block;
+  padding: 0;
+}
+
+figure img {
+  max-width: 100% !important;
+}
+
+figcaption {
+  font-size: 10pt;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+/* -------------
+   Typography
+   ------------- */
+
+blockquote,
+blockquote p {
+    line-height: 1.5;
+}
+
+.postHeader{
+  font-size: 16pt !important;
+  width: initial !important;
+  border: 4px outset #b3b3b3 !important;
+  padding: 10px !important;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+.post h1,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
+  clear: both;
+  text-align: center;
+  font-weight: 600;
+  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+.post h1{
+  font-size: 11pt;
+  border: 3px inset #b3b3b3;
+  padding: 10px;
+}
+
+.post h2 {
+  font-size: 11pt;
+  border: 3px ridge #b3b3b3;
+}
+
+.post h3 {
+  font-size: 11pt;
+  border: 1px solid black;
+}
+
+.post h4 {
+  font-size: 11pt;
+  border: 1px dashed #b3b3b3;
+}
+
+.post h5 {
+  font-size: 11pt;
+  float: left;
+  border: 3px outset #b3b3b3;
+  margin: 0 15px 0 0;
+  max-width: 40%;
+  text-align: left;
+  text-transform: initial;
+}
+
+.post h6 {
+  font-size: 10pt;
+  float: left;
+  border: 3px inset #b3b3b3;
+  margin: 0 15px 0 0;
+  text-align: left;
+  max-width: 25%;
+  text-transform: initial;
+}
+
+.outerPost{
+  position: relative;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* -----------------------------------------------
+   Selection
+   ----------------------------------------------- */
+
+#selection{
+  margin-top: 50px;
+  width: calc(40% - 50px);
+  float: right;
+  /*background-color: white;*/
+  position: fixed;
+  right: 0;
+  opacity: 0;
+   -moz-animation: fadein 0.6s ease-in 0.6s forwards; /* Firefox */
+   -webkit-animation: fadein 0.6s ease-in 0.6s forwards; /* Safari and Chrome */
+   -o-animation: fadein 0.6s ease-in 0.6s forwards; /* Opera */
+   animation: fadein 0.6s ease-in 0.6s forwards;
+}
+
+#selection .post{
+    font-size: 10px;
+    width: 600px;
+    position: absolute;
+    transform-origin: 0 0;
+    transform: scale(0.40, 0.40);
+    -ms-transform: scale(0.40, 0.40);
+    -webkit-transform: scale(0.40, 0.40);
+    background-color: white;
+    padding: 20px;
+    max-height: 100vh;
+    overflow: hidden;
+        border: 1px solid black;
+            animation: opacityAnimate 0.3s;
+}
+
+
+#selection input{
+    display: none;
+}
+
+/* begin fadein animation */
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+/* opacity animation */
+@keyframes opacityAnimate {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+/* -----------------------------------------------
+   Print A5
+   ----------------------------------------------- */
+@page {
+  /*size: A4;*/
+  margin-left: 3cm;
+  margin-bottom: 3cm;
+  margin-right: 5mm;
+  margin-top: 5mm;
+}
+
+@media print{
+
+    #siteHeader{
+      display: none;
+    }
+
+    #posts {display: none;}
+
+
+    #selection{
+        margin-top: 0px;
+        width: 100%;
+        float: initial;
+        position: initial;
+        opacity:  1 !important
+
+    }
+
+    hr{
+      display: none;
+    }
+
+    #selection .post{
+      page-break-after:always;
+      position: relative !important;
+      margin: 0 !important;
+      position: initial;
+      width: 100%;
+      transform-origin: initial;
+      transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+      border:0 !important;
+      max-height:99999999999999999px !important;
+      overflow:visible !important;
+      padding: 0px;
+    }
+
+    .post .noBreak{
+      page-break-inside: avoid;
+    }
+
+    #selection .post:nth-of-type(1){
+        margin-top: initial;
+        margin-left: initial;
+    }
+
+    #selection .post:nth-of-type(2){
+        margin-top: initial;
+        margin-left: initial;
+    }
+}
