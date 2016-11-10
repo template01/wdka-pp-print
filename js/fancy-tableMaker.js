@@ -46,7 +46,7 @@ var tableMaker = (function() {
                 <div class='sort-excerpt'>` + excerpt + `</div>
                 <div class='content' data-content='` + content + `'></div>
                 <div class="tablePostReadMode">
-                  <div>Full article <span class="fa fa-long-arrow-right"></span></div>
+                  <div>Full article <span class="fa fa-newspaper-o "></span></div>
                 </div>
 
               </div>

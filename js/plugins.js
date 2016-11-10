@@ -22,3 +22,29 @@
 }());
 
 // Place any jQuery/helper plugins in here.
+
+// Place any jQuery/helper plugins in here.
+
+(function ( $ ) {
+$.fn.removeClassDelay = function(options) {
+    var settings = $.extend({
+        class: "",
+        delay: 1000
+    }, options );
+    var savedThis = this
+    setTimeout(function(){ savedThis.removeClass(settings.class); }, settings.delay);
+    return this;
+}
+}( jQuery ));
+
+(function ( $ ) {
+$.fn.addClassDelay = function(options) {
+    var settings = $.extend({
+        class: "",
+        delay: 1000
+    }, options );
+    var savedThis = this
+    setTimeout(function(){ savedThis.addClass(settings.class); }, settings.delay);
+    return this;
+}
+}( jQuery ));

@@ -4,7 +4,7 @@
   position: fixed
   right: 0
   height: 100%
-  font-size: $defaultFontSizeParagraph
+  font-size: $defaultFontSizeParagraphInterface
   .disable
     opacity: 0.3
     pointer-events: none
@@ -37,10 +37,29 @@
   #basket
     .basketItem
       padding: $paddingMain/2
+      width: 100%
+      clear: both
+      display: inline-block
+      vertical-align: top
+      opacity: 1
+      transition: opacity 0.2s
+      border-bottom: 1px solid $tableTertiaryColor
+      &.glimpse
+        opacity: 0
       p
+        font-size: $defaultFontSizeParagraphInterface
         margin: 0
+        float: left
         &:before
           content: "- "
+      span
+        color: $tablePrimaryColorDark
+        cursor: pointer
+        float: right
+        line-height: 20px
+        padding-left: $paddingMain/2
+        padding-right: 2px
+
 
 
   #basketCounter
@@ -87,6 +106,34 @@
     .sort
       padding: $paddingMain/2
       background: $tablePrimaryColor
+      &.asc
+        &:after
+          color: $tablePrimaryColorDark
+          font-family: FontAwesome
+          content: "\f15d"
+      &.desc
+        &:after
+          color: $tablePrimaryColorDark
+          font-family: FontAwesome
+          content: "\f15e"
+
+      &[data-sort=sort-date]
+        &.asc
+          &:after
+            content: "\f162"
+        &.desc
+          &:after
+            content: "\f163"
+
+      &[data-sort=sort-selected]
+        &.asc
+          &:after
+            content: "\f175"
+        &.desc
+          &:after
+            content: "\f176"
+
+
     .sort:not(:last-child)
       border-right: 2px solid $secondaryColor
 
@@ -164,12 +211,18 @@
         cursor: pointer
         p
           display: none
-
+        &:hover
+          &:after
+            content: "Click to select" !important
         &:after
           color: white
           content: "✘"
+
         &.selected
           background: rgb(134, 182, 134)
+          &:hover
+            &:after
+              content: "Click to deselect" !important
           &:after
             color: white
             content: "✔"

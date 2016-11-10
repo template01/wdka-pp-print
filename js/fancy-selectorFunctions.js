@@ -1,9 +1,65 @@
 var selectorFunctions = (function() {
+    var changeBasketOrderHash = function() {
+
+        lochash = location.hash.substr(1)
+        reg = /(selected=.*?\&)|(selected=.*?s*($|;.*))/gi;
+        lochash.replace(reg, "")
+
+
+        var selectedOrder = ''
+        $("#basket .basketItem").each(function() {
+            $(this).attr('data-selected-basket')
+            selectedOrder = selectedOrder + ',' + $(this).attr('data-selected-basket')
+        })
+
+        location.hash = lochash.replace(reg, "") + "selected=" + selectedOrder.substring(1)
+            // data-selected-basket
+    }
+    var changeBasketOrderEvent = function() {
+        $(document).on('click', "#basket .basketItem .up", function() {
+            var basketItem = $(this).parent();
+
+            basketItem
+                .addClass('glimpse')
+
+            window.setTimeout(function() {
+                basketItem.prev().insertAfter(basketItem);
+                selectorFunctions.changeBasketOrderHash()
+                selectorFunctions.setSelectedOrderPrintPreview()
+                basketItem
+                    .removeClass('glimpse')
+
+            }, 200)
+
+
+        })
+        $(document).on('click', "#basket .basketItem .down", function() {
+            var basketItem = $(this).parent();
+
+            basketItem
+                .addClass('glimpse')
+
+            window.setTimeout(function() {
+                basketItem.next().insertBefore(basketItem);
+                selectorFunctions.changeBasketOrderHash()
+                selectorFunctions.setSelectedOrderPrintPreview()
+                basketItem
+                    .removeClass('glimpse')
+
+            }, 200)
+
+
+        })
+
+    }
 
     var addToBasket = function(jqueryElement, id) {
         $("#basket").append(`
           <div class="basketItem" data-selected-basket=` + id + `>
             ` + jqueryElement.find('.sort-title').html() + `
+            <span class="fa fa-long-arrow-down down"></span>
+            <span class="fa fa-long-arrow-up up"></span>
+
           </div>
         `)
         setEmptyBasketIcon(true)
@@ -34,9 +90,9 @@ var selectorFunctions = (function() {
                 $(this).find('p').text('2')
                 selectorFunctions.removeHashLocation($(this).attr('data-id'))
                 selectorFunctions.removeFromBasket($(this).attr('data-id'))
-                // console.log($("#printpreview #postid-"+$(this).attr('data-id')))
+                    // console.log($("#printpreview #postid-"+$(this).attr('data-id')))
                 $("#printpreview #postid-" + $(this).attr('data-id')).remove()
-                // console.log($("#printpreview #postid-"+$(this).attr('data-id')))
+                    // console.log($("#printpreview #postid-"+$(this).attr('data-id')))
 
             }
             sortList.reIndex()
@@ -44,10 +100,34 @@ var selectorFunctions = (function() {
         })
     }
 
+
+    var setSelectedOrderPrintPreview = function() {
+
+        lochash = location.hash.substr(1),
+            selected = lochash.substr(lochash.indexOf('selected=')).split('&')[0].split('=')[1];
+
+
+        if (typeof selected !== "undefined" && selected.length > 0) {
+            $("#printpreview").empty()
+            selected.split(",").map(function(id, index) {
+
+                content = $("#postid-" + id).find('.tablePostContent .content').attr('data-content')
+                $("#postid-" + id).clone().appendTo("#printpreview").find('.tablePostContent .content').html(content)
+
+            })
+
+        }
+    }
+
+
+
+
+
+
     var setSelectedOnLoad = function(sortList) {
 
         lochash = location.hash.substr(1),
-        selected = lochash.substr(lochash.indexOf('selected=')).split('&')[0].split('=')[1];
+            selected = lochash.substr(lochash.indexOf('selected=')).split('&')[0].split('=')[1];
 
         if (typeof selected !== "undefined" && selected.length > 0) {
             selected.split(",").map(function(id, index) {
@@ -69,10 +149,14 @@ var selectorFunctions = (function() {
 
     }
 
+
+
+
+
     var setSelectedOnLoadMore = function(sortList) {
 
         lochash = location.hash.substr(1),
-        selected = lochash.substr(lochash.indexOf('selected=')).split('&')[0].split('=')[1];
+            selected = lochash.substr(lochash.indexOf('selected=')).split('&')[0].split('=')[1];
 
         if (typeof selected !== "undefined" && selected.length > 0) {
             selected.split(",").map(function(id, index) {
@@ -102,7 +186,7 @@ var selectorFunctions = (function() {
     var setHashLocation = function(id) {
 
         lochash = location.hash.substr(1),
-        selected = lochash.substr(lochash.indexOf('selected=')).split('&')[0].split('=')[1];
+            selected = lochash.substr(lochash.indexOf('selected=')).split('&')[0].split('=')[1];
 
         if (typeof selected !== "undefined") {
             if (selected.length > 0) {
@@ -120,7 +204,7 @@ var selectorFunctions = (function() {
     var removeHashLocation = function(id) {
 
         lochash = location.hash.substr(1),
-        selected = lochash.substr(lochash.indexOf('selected=')).split('&')[0].split('=')[1];
+            selected = lochash.substr(lochash.indexOf('selected=')).split('&')[0].split('=')[1];
 
         array = selected.split(",")
         index = array.indexOf(id)
@@ -136,12 +220,12 @@ var selectorFunctions = (function() {
         $("#rightContent #basketWrapper #basketCounter").append('<span id="emptyBasket" class="fa fa-trash-o"></span>')
     }
 
-    setEmptyBasketIcon=function(state){
-      if(state == false){
-        $("#emptyBasket").removeClass('fa-trash').addClass('fa-trash-o')
-      }else{
-        $("#emptyBasket").removeClass('fa-trash-o').addClass('fa-trash')
-      }
+    setEmptyBasketIcon = function(state) {
+        if (state == false) {
+            $("#emptyBasket").removeClass('fa-trash').addClass('fa-trash-o')
+        } else {
+            $("#emptyBasket").removeClass('fa-trash-o').addClass('fa-trash')
+        }
     }
 
     var emptyBasket = function(emptyEvent) {
@@ -168,23 +252,27 @@ var selectorFunctions = (function() {
         this.emptyBasket('#emptyBasket')
         this.createBasketCounter()
         this.createEmptyBasketElements()
+        this.changeBasketOrderEvent()
 
 
     }
 
     return {
-        createBasketCounter:createBasketCounter,
+        createBasketCounter: createBasketCounter,
         createEmptyBasketElements: createEmptyBasketElements,
         emptyBasket: emptyBasket,
         removeFromBasket: removeFromBasket,
         addToBasket: addToBasket,
-        setEmptyBasketIcon:setEmptyBasketIcon,
+        setSelectedOrderPrintPreview: setSelectedOrderPrintPreview,
+        setEmptyBasketIcon: setEmptyBasketIcon,
         setSelectedOnLoad: setSelectedOnLoad,
         setSelectedOnLoadMore: setSelectedOnLoadMore,
         removeHashLocation: removeHashLocation,
         setHashLocation: setHashLocation,
         toggleSelector: toggleSelector,
-        initSelector: initSelector
+        initSelector: initSelector,
+        changeBasketOrderHash: changeBasketOrderHash,
+        changeBasketOrderEvent: changeBasketOrderEvent
     };
 
 })();
