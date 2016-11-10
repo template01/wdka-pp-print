@@ -13,7 +13,8 @@ var readPreview = (function() {
             .find('.tablePostContent .content').html(content)
           $("#readpreview").find('.tablePostMeta').append('<div class="tablePostMetaItem back"><p><span class="fa fa-long-arrow-left"></span> Back to list<p></div>')
 
-          $("#readpreview").toggle()
+          $("#readpreview").show()
+          $("#tableWrapper").hide()
           $("#rightContent").children().addClass('disable')
 
         })
