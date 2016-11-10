@@ -1,11 +1,2 @@
-#leftContent #printpreview .section-default {
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  column-count: 2;
-  -webkit-column-gap: 30px;
-  -moz-column-gap: 30px;
-  column-gap: 30px;
-  /*  -moz-column-fill: auto;
-   *  column-fill: auto; */ }
-
+#leftContent #printpreview .section-introduction{padding-right:3cm}#leftContent #printpreview .section-introduction p{font-size:12pt}#leftContent #printpreview .section-introduction h1{float:left !important;width:initial !important;padding-right:50px !important;padding-top:0 !important}#leftContent #printpreview .section-default{-webkit-column-count:2;-moz-column-count:2;column-count:2;-webkit-column-gap:20px;-moz-column-gap:20px;column-gap:20px}
 /*# sourceMappingURL=fancySectionStyle.css.map */

@@ -1,24 +1,2 @@
-@media print {
-  #rightContent {
-    display: none; }
-
-  #tableWrapper {
-    display: none !important; }
-
-  #readpreview {
-    display: none !important; }
-
-  #printpreview {
-    display: block !important;
-    width: 100% !important; }
-    #printpreview .tablePostMeta {
-      display: none; }
-
-  a[href]:after {
-    content: none !important; }
-
-  @page {
-    size: A4;
-    margin: 1cm; } }
-
+@media print{#rightContent{display:none}#tableWrapper{display:none !important}#readpreview{display:none !important}#printpreview{display:block !important;width:100% !important}#printpreview .tablePostMeta{display:none}a[href]:after{content:none !important}@page{size:A4;margin:1cm;margin-top:3.5cm}}
 /*# sourceMappingURL=fancyResetPrintStyle.css.map */
