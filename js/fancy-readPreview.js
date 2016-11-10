@@ -11,10 +11,10 @@ var readPreview = (function() {
           content = $(this).parents('.tablePost').find('.tablePostContent .content').attr('data-content')
           $(this).parents('.tablePost').clone().appendTo("#readpreview")
             .find('.tablePostContent .content').html(content)
-          $("#readpreview").find('.tablePostMeta').append('<div class="tablePostMetaItem back"><span class="fa fa-long-arrow-left"></span> Back to list</div>')
+          $("#readpreview").find('.tablePostMeta').append('<div class="tablePostMetaItem back"><p><span class="fa fa-long-arrow-left"></span> Back to list<p></div>')
 
           $("#readpreview").toggle()
-          $("#rightContent").children().toggle()
+          $("#rightContent").children().addClass('disable')
 
         })
     }
@@ -24,8 +24,10 @@ var readPreview = (function() {
 
         $(document).on('click', closeEvent, function() {
 
-          $("#readpreview").toggle().empty()
-          $("#rightContent").children().toggle()
+          $("#readpreview").hide().empty()
+          $("#printpreview").hide()
+          $("#tableWrapper").show()
+          $("#rightContent").children().removeClass('disable')
 
         })
     }

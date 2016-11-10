@@ -1,10 +1,14 @@
 #rightContent
-  background: #E6E6E6
+  background: $tablePrimaryColor
   width: 20%
   position: fixed
   right: 0
   height: 100%
   font-size: $defaultFontSizeParagraph
+  .disable
+    opacity: 0.3
+    pointer-events: none
+
   #topContent
     .search
       border: 0
@@ -12,7 +16,23 @@
       margin: 0
       width: 100%
       height: calc(22px + #{$paddingMain})
+      line-height: calc(22px + #{$paddingMain})
       padding: $paddingMain/2
+      background: $tableTertiaryColor
+      color: black
+
+    input::-webkit-input-placeholder
+      color: black !important
+
+    input:-moz-placeholder
+      color: black !important
+
+    input::-moz-placeholder
+      color: black !important
+
+    input:-ms-input-placeholder
+      color: black !important
+
 
   #basket
     .basketItem
@@ -24,28 +44,31 @@
 
 
   #basketCounter
-    background: gray
+    background: $tablePrimaryColorDark
     padding: $paddingMain/2
     &:after
       color: white
       content: "Print Selection"
 
   #showPrint
-    background: gray
+    background: $tablePrimaryColorDark
     padding: $paddingMain/2
+    cursor: pointer
 
     &:after
       color: white
       content: "Print Preview"
-    &.showList
+    &.makeSelection
       &:after
         color: white
-        content: "Show List"
+        content: "Please make a selection"
 
   #emptyBasket
     float: right
     color: white
     line-height: calc(22px)
+    cursor: pointer
+
 
 
 
@@ -60,11 +83,12 @@
     z-index: 1
     width: 80%
     height: calc(22px + #{$paddingMain})
-    border-bottom: 1px solid $secondaryColor
+    border-bottom: 2px solid $secondaryColor
     .sort
       padding: $paddingMain/2
+      background: $tablePrimaryColor
     .sort:not(:last-child)
-      border-right: 1px solid $secondaryColor
+      border-right: 2px solid $secondaryColor
 
 
     button
@@ -81,7 +105,7 @@
 .tablePost
   .tablePostContent
     padding: $paddingMain/2
-    background: rgb(248,248,255)
+    background: $tableTertiaryColor
     float: left
     width: 100%
     display: inline-block
@@ -91,8 +115,10 @@
     .sort-excerpt
       width: 75%
     .tablePostReadMode
-      background: rgb(240,248,255)
+      background: $tableTertiaryColorDark
       width: 25%
+      cursor: pointer
+
       // float: right
       position: absolute
       right: 0
@@ -112,13 +138,13 @@
     line-height: calc(22px + #{$paddingMain})
     width: 100%
     display: inline-block
-    background: rgb(230,230,230)
+    background: $tablePrimaryColor
     .tablePostMetaItem
       width: 25%
       float: left
       height: 100%
       &:not(:last-child)
-        border-right: 1px solid $secondaryColor
+        border-right: 2px solid $secondaryColor
       p
         display: inline-block
         white-space: nowrap
@@ -128,12 +154,14 @@
         padding: 0 $paddingMain/2
 
       &.back
-        background: gray
+        cursor: pointer
+        background: $tablePrimaryColorDark
 
       &.postSelect
-        background: #FF8585
+        background: rgb(255, 143, 114)
         text-align: center
         transition: background 0.1s
+        cursor: pointer
         p
           display: none
 
@@ -141,7 +169,7 @@
           color: white
           content: "✘"
         &.selected
-          background: lime
+          background: rgb(134, 182, 134)
           &:after
             color: white
             content: "✔"
