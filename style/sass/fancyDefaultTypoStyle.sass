@@ -1,28 +1,29 @@
 body
-  font-family: 'texgyreadventorregular', sans-serif
+  font-family: 'TeXGyreAdventor', sans-serif
   font-stretch: expanded
   letter-spacing: 0.1pt
 
 p, h1, h2, h3, ul, ol
-  font-weight: 400
+  font-weight: normal
   letter-spacing: 0.05em
 
 h1
-  font-weight: 500
-  text-transform: uppercase
   letter-spacing: 0.02em
   font-size: 15pt
 
 h2
-  font-size: 15pt
-  text-transform: uppercase
-  margin: 25px 0 15px 0
+  font-size: 13pt
+  margin: 50px 0 15px 0
   text-align: center
 
 h3 
   font-size: 11pt
   text-align: center
   margin-bottom: 15px
+
+h2, h3
+  padding: 0 15%
+  letter-spacing: 0.10em
 
 p
   font-size: $defaultFontSizeParagraph
@@ -34,5 +35,8 @@ p
 a
   text-decoration: none
 
+.smallText
+  font-size: 9pt
+  letter-spacing: 0.10em
 
 @media print
