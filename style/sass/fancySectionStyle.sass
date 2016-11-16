@@ -6,10 +6,10 @@
       p
         font-size: 12pt
       h1
+        font-size: 22pt
         float: left !important
         width: initial !important
-        padding-right: 50px !important
-        padding-top: 0 !important
+        margin: 13px 30px 20px 0
 
     .section-default
       -webkit-column-count: 2
@@ -35,3 +35,6 @@
         column-count: auto
 
     @media print
+      #leftContent #printpreview>*
+        margin-top: 0 !important
+        font-size: 20pt !important
