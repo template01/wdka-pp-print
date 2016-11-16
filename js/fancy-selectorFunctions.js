@@ -86,6 +86,7 @@ var selectorFunctions = (function() {
 
                 $("#postid-" + $(this).attr('data-id')).clone().appendTo("#printpreview").find('.tablePostContent .content').html(content)
 
+
             } else {
                 $(this).find('p').text('2')
                 selectorFunctions.removeHashLocation($(this).attr('data-id'))
@@ -95,6 +96,7 @@ var selectorFunctions = (function() {
                     // console.log($("#printpreview #postid-"+$(this).attr('data-id')))
 
             }
+            selectorFunctions.wrapdefaultsections()
             sortList.reIndex()
 
         })
@@ -114,6 +116,7 @@ var selectorFunctions = (function() {
                 content = $("#postid-" + id).find('.tablePostContent .content').attr('data-content')
                 $("#postid-" + id).clone().appendTo("#printpreview").find('.tablePostContent .content').html(content)
 
+                selectorFunctions.wrapdefaultsections()
             })
 
         }
@@ -121,7 +124,29 @@ var selectorFunctions = (function() {
 
 
 
+    var wrapdefaultsections = function(){
 
+      var target = '.section-default-wrapper',
+          invert = ':not(' + target + ')',
+          wrap = '<div class="section-default-wrapper-outer">',
+          breakpoints = $('#printpreview > *' + invert);
+
+      $('.section-default-wrapper-outer').children().unwrap()
+
+      if($("#printpreview").find('.tablePost:not('+target+')').length>0){
+
+        breakpoints.each(function() {
+            $(this).nextUntil(invert).wrapAll(wrap);
+        });
+
+        breakpoints.first().prevUntil(invert).wrapAll(wrap);
+        // alert()
+
+      }else{
+        $("#printpreview").children().wrapAll(wrap)
+      }
+
+    }
 
 
     var setSelectedOnLoad = function(sortList) {
@@ -144,7 +169,7 @@ var selectorFunctions = (function() {
 
             })
         }
-
+        selectorFunctions.wrapdefaultsections()
         sortList.reIndex()
 
     }
@@ -258,6 +283,7 @@ var selectorFunctions = (function() {
     }
 
     return {
+        wrapdefaultsections: wrapdefaultsections,
         createBasketCounter: createBasketCounter,
         createEmptyBasketElements: createEmptyBasketElements,
         emptyBasket: emptyBasket,

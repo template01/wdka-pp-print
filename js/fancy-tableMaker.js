@@ -34,7 +34,7 @@ var tableMaker = (function() {
             // console.log(content)
 
             deployTableInner.append(`
-            <div id="postid-` + id + `" class="tablePost">
+            <div id="postid-` + id + `" class="tablePost section-` + publication_section + `-wrapper">
               <div class="tablePostMeta">
                 <div class='tablePostMetaItem sort-title'><p>` + title + `</p></div>
                 <div class='tablePostMetaItem sort-date'><p>` + date + `</p></div>
