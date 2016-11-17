@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    
+
     var tableStarted = false
     var splashStarted = false
 

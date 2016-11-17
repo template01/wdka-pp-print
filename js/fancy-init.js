@@ -1,20 +1,21 @@
 var initViews = (function() {
 
   var initTableView = function() {
+    fancyLoad.loadWrapper()
     tableMaker.setupTable()
     selectorFunctions.initSelector()
     printPreview.initPrintpreview()
     readPreview.initreadpreview()
-
-
-
-
   }
 
   var hideTableView = function() {
     $('#leftContent').hide()
     $("#rightContent").children().addClass('disable')
 
+  }
+
+  var showLoadView = function(){
+    $('#loadContent').show()
   }
 
   var showTableView = function(){
@@ -42,6 +43,7 @@ var initViews = (function() {
   }
 
   return {
+    showLoadView:showLoadView,
     showSplashView:showSplashView,
     hideSplashView:hideSplashView,
     showTableView:showTableView,

@@ -92,6 +92,7 @@ var tableMaker = (function() {
                 console.log(request.getResponseHeader('X-WP-Total'));
                 tableMaker.createTableCells(data, $('#table'))
                 createSortTable.listjsInit(request.getResponseHeader('X-WP-TotalPages'))
+                fancyLoad.loadWrapperHide()
 
             }
 
