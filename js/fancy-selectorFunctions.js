@@ -11,8 +11,10 @@ var selectorFunctions = (function() {
             $(this).attr('data-selected-basket')
             selectedOrder = selectedOrder + ',' + $(this).attr('data-selected-basket')
         })
+          
 
-        location.hash = lochash.replace(reg, "") + "selected=" + selectedOrder.substring(1)
+        routie('table/selected='+ selectedOrder.substring(1));
+
             // data-selected-basket
     }
     var changeBasketOrderEvent = function() {
@@ -124,27 +126,27 @@ var selectorFunctions = (function() {
 
 
 
-    var wrapdefaultsections = function(){
+    var wrapdefaultsections = function() {
 
-      var target = '.section-default-wrapper',
-          invert = ':not(' + target + ')',
-          wrap = '<div class="section-default-wrapper-outer">',
-          breakpoints = $('#printpreview > *' + invert);
+        var target = '.section-default-wrapper',
+            invert = ':not(' + target + ')',
+            wrap = '<div class="section-default-wrapper-outer">',
+            breakpoints = $('#printpreview > *' + invert);
 
-      $('.section-default-wrapper-outer').children().unwrap()
+        $('.section-default-wrapper-outer').children().unwrap()
 
-      if($("#printpreview").find('.tablePost:not('+target+')').length>0){
+        if ($("#printpreview").find('.tablePost:not(' + target + ')').length > 0) {
 
-        breakpoints.each(function() {
-            $(this).nextUntil(invert).wrapAll(wrap);
-        });
+            breakpoints.each(function() {
+                $(this).nextUntil(invert).wrapAll(wrap);
+            });
 
-        breakpoints.first().prevUntil(invert).wrapAll(wrap);
-        // alert()
+            breakpoints.first().prevUntil(invert).wrapAll(wrap);
+            // alert()
 
-      }else{
-        $("#printpreview").children().wrapAll(wrap)
-      }
+        } else {
+            $("#printpreview").children().wrapAll(wrap)
+        }
 
     }
 
@@ -208,29 +210,45 @@ var selectorFunctions = (function() {
 
     }
 
+    var setSelectedHash = function(id) {
+        reg = /(selected=.*?\&)|(selected=.*?s*($|;.*))/gi;
+
+        alreadySelected = location.hash.substr(location.hash.indexOf('selected=')).split('&')[0].split('=')[1];
+        if (alreadySelected === undefined || alreadySelected === null) {
+            alreadySelected = ''
+        }
+        addcomma = ''
+        if (alreadySelected.length > 0) {
+            addcomma = ','
+        } else {
+            addcomma = ''
+        }
+        // location.hash = location.hash.substr(1).replace(reg, "") + "selected=" + alreadySelected + addcomma + id
+        routie('table/selected='+ alreadySelected + addcomma + id);
+    }
+
+    var removeSelectedHash = function(id) {
+        reg = /(selected=.*?\&)|(selected=.*?s*($|;.*))/gi;
+
+        if (id === 'all') {
+            id = ''
+        }
+
+        routie('table/selected='+ id);
+
+
+    }
+
+
     var setHashLocation = function(id) {
 
-        lochash = location.hash.substr(1),
-            selected = lochash.substr(lochash.indexOf('selected=')).split('&')[0].split('=')[1];
-
-        if (typeof selected !== "undefined") {
-            if (selected.length > 0) {
-                location.hash = location.hash + ',' + id
-            } else {
-                location.hash = "selected=" + id
-            }
-        } else {
-            location.hash = "selected=" + id
-
-        }
+        selectorFunctions.setSelectedHash(id)
 
     }
 
     var removeHashLocation = function(id) {
 
-        lochash = location.hash.substr(1),
-            selected = lochash.substr(lochash.indexOf('selected=')).split('&')[0].split('=')[1];
-
+        selected = location.hash.substr(1).substr(location.hash.substr(1).indexOf('selected=')).split('&')[0].split('=')[1];
         array = selected.split(",")
         index = array.indexOf(id)
 
@@ -238,7 +256,8 @@ var selectorFunctions = (function() {
             array.splice(index, 1);
         }
 
-        location.hash = "selected=" + array.toString()
+        selectorFunctions.removeSelectedHash(array.toString())
+
     }
 
     createEmptyBasketElements = function() {
@@ -259,7 +278,7 @@ var selectorFunctions = (function() {
 
             if ($("#printpreview").children().length > 0) {
                 setEmptyBasketIcon(false)
-                location.hash = ""
+                selectorFunctions.removeSelectedHash('all')
                 $("#basket").empty()
                 $("#printpreview").empty()
                 $(".postSelect").removeClass("selected")
@@ -283,6 +302,8 @@ var selectorFunctions = (function() {
     }
 
     return {
+        setSelectedHash: setSelectedHash,
+        removeSelectedHash: removeSelectedHash,
         wrapdefaultsections: wrapdefaultsections,
         createBasketCounter: createBasketCounter,
         createEmptyBasketElements: createEmptyBasketElements,

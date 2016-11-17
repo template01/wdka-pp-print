@@ -14,7 +14,7 @@
       border: 0
       padding: 0
       margin: 0
-      width: 100%
+      width: calc(100% - (22px + #{$paddingMain}))
       height: calc(22px + #{$paddingMain})
       line-height: calc(22px + #{$paddingMain})
       padding: $paddingMain/2
@@ -33,6 +33,15 @@
     input:-ms-input-placeholder
       color: black !important
 
+    #toSplash
+      width: calc(22px + #{$paddingMain})
+      height: calc(22px + #{$paddingMain})
+      line-height: calc(22px + #{$paddingMain})
+      text-align: center
+      float: right
+      color: white
+      background: $selectedColor
+
 
   #basket
     .basketItem
@@ -47,6 +56,7 @@
       &.glimpse
         opacity: 0
       p
+        max-width: calc(100% - (22px + #{$paddingMain}))
         font-size: $defaultFontSizeParagraphInterface
         margin: 0
         float: left
@@ -59,6 +69,7 @@
         line-height: 20px
         padding-left: $paddingMain/2
         padding-right: 2px
+        margin-right: -2px
 
 
 
@@ -205,7 +216,7 @@
         background: $tablePrimaryColorDark
 
       &.postSelect
-        background: rgb(255, 143, 114)
+        background: $selectedNotColor
         text-align: center
         transition: background 0.1s
         cursor: pointer
@@ -219,7 +230,7 @@
           content: "✘"
 
         &.selected
-          background: rgb(134, 182, 134)
+          background: $selectedColor
           &:hover
             &:after
               content: "Click to deselect" !important
