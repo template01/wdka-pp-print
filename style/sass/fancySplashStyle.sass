@@ -1,0 +1,41 @@
+#splash
+
+  #splashLeftContent
+    width: 80%
+    float: left
+
+    padding: $paddingMain/2
+
+    #splashHeader
+      position: fixed
+      width: 80%
+      background: $tablePrimaryColor
+      left: 0
+      top: 0
+      height: calc(22px + #{$paddingMain})
+
+      a
+        margin: $paddingMain/2
+        line-height: calc(22px + #{$paddingMain})
+        font-size: $defaultFontSizeParagraphInterface
+        text-decoration: none
+
+    #splashIntro
+      margin-top: calc(22px + #{$paddingMain})
+
+  #splashRightContent
+    width: 20%
+    right: 0
+    position: fixed
+    height: 100%
+
+    #splashRightContentLogos
+      position: absolute
+      bottom: 0
+      padding: $paddingMain/2
+      img
+        &:first-of-type
+          margin-right: $paddingMain/2
+
+        width: calc(50% - (#{$paddingMain}/4))
+        float: left

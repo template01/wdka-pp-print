@@ -2,8 +2,6 @@
 var createSortTable = (function() {
 
 
-  var ass = 'hey'
-
 
 
     var listjsInit = function(totalPages) {
@@ -26,11 +24,12 @@ var createSortTable = (function() {
     }
 
     var listExternalSearch = function(searchObject) {
-        $("#rightContent #topContent").append("<input class='search' placeholder='&#xF002; Search...' style='font-family: FontAwesome, texgyreadventorregular !important'/>")
+        $("#rightContent #topContent").append("<input class='search' placeholder='&#xF002; Search...' style='font-family: FontAwesome, TeXGyreAdventor !important'/><div id='toSplash'><span class='fa fa-info' aria-hidden='true'</span></div>")
         $("#rightContent .search").bind("change paste keyup", function() {
             searchObject.search($(this).val());
         });
+        splashFunctions.handleToSplashEvent()
     }
 
-    return {listjsInit: listjsInit, listExternalSearch: listExternalSearch, ass:ass};
+    return {listjsInit: listjsInit, listExternalSearch: listExternalSearch};
 })();
