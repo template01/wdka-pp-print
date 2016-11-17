@@ -1,4 +1,9 @@
 @media print
+
+  #leftContent #printpreview>*
+    margin-top: 0 !important
+    font-size: 20pt !important
+    
   #rightContent
     display: none
 
@@ -9,6 +14,7 @@
     display: none !important
 
   #printpreview
+    position: relative !important
     display: block !important
     width: 100% !important
     .tablePostMeta
@@ -19,6 +25,16 @@
 
   #leftContent #printpreview>*
     margin-top: 0 !important
+
+  //
+  // #printpreview
+  //   display: none !important
+  #test
+    display: none !important
+    // display: block !important
+    .breakafter
+      page-break-after:always
+
 
   @page
     size: A4

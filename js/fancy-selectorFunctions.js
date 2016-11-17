@@ -11,11 +11,11 @@ var selectorFunctions = (function() {
             $(this).attr('data-selected-basket')
             selectedOrder = selectedOrder + ',' + $(this).attr('data-selected-basket')
         })
-          
 
-        routie('table/selected='+ selectedOrder.substring(1));
 
-            // data-selected-basket
+        routie('table/selected=' + selectedOrder.substring(1));
+
+        // data-selected-basket
     }
     var changeBasketOrderEvent = function() {
         $(document).on('click', "#basket .basketItem .up", function() {
@@ -27,7 +27,11 @@ var selectorFunctions = (function() {
             window.setTimeout(function() {
                 basketItem.prev().insertAfter(basketItem);
                 selectorFunctions.changeBasketOrderHash()
-                selectorFunctions.setSelectedOrderPrintPreview()
+                
+                window.setTimeout(function() {
+                    selectorFunctions.setSelectedOrderPrintPreview()
+                }, 10)
+
                 basketItem
                     .removeClass('glimpse')
 
@@ -44,7 +48,10 @@ var selectorFunctions = (function() {
             window.setTimeout(function() {
                 basketItem.next().insertBefore(basketItem);
                 selectorFunctions.changeBasketOrderHash()
-                selectorFunctions.setSelectedOrderPrintPreview()
+
+                window.setTimeout(function() {
+                    selectorFunctions.setSelectedOrderPrintPreview()
+                }, 10)
                 basketItem
                     .removeClass('glimpse')
 
@@ -110,6 +117,7 @@ var selectorFunctions = (function() {
         lochash = location.hash.substr(1),
             selected = lochash.substr(lochash.indexOf('selected=')).split('&')[0].split('=')[1];
 
+        console.log(selected)
 
         if (typeof selected !== "undefined" && selected.length > 0) {
             $("#printpreview").empty()
@@ -224,7 +232,7 @@ var selectorFunctions = (function() {
             addcomma = ''
         }
         // location.hash = location.hash.substr(1).replace(reg, "") + "selected=" + alreadySelected + addcomma + id
-        routie('table/selected='+ alreadySelected + addcomma + id);
+        routie('table/selected=' + alreadySelected + addcomma + id);
     }
 
     var removeSelectedHash = function(id) {
@@ -234,7 +242,7 @@ var selectorFunctions = (function() {
             id = ''
         }
 
-        routie('table/selected='+ id);
+        routie('table/selected=' + id);
 
 
     }

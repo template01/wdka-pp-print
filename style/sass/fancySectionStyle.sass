@@ -1,7 +1,13 @@
 #leftContent
   #printpreview
 
+    .section-introduction-wrapper
+      page-break-after: always !important
+
+
     .section-introduction
+      page-break-after: always !important
+      page-break-before: always !important
       padding-right: 3cm
       p
         font-size: 12pt
@@ -35,8 +41,3 @@
         -webkit-column-count: auto
         -moz-column-count: auto
         column-count: auto
-
-    @media print
-      #leftContent #printpreview>*
-        margin-top: 0 !important
-        font-size: 20pt !important
