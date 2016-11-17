@@ -18,17 +18,32 @@ a
   font-size: 9pt
   border-bottom: 1px solid black
 
+ul, ol
+  line-height: 1.3
+  letter-spacing: .05em
+
+ul
+  list-style-type: circle
+
+li
+  margin-bottom: 10px
+
 h1, h2, h3, h4
   line-height: 1.1
 
 h1
-  font-size: 20pt
+  font-size: 18pt
   margin: 0
 
 h2
   font-size: 14pt
-  margin: 2px 0 5px 0
+  margin: 5px 0 5px 0
   letter-spacing: 0.02em
+
+h3
+  font-size: 12pt
+  letter-spacing: 0.05em
+  font-weight: 400
 
 h6
   display: none
@@ -36,5 +51,15 @@ h6
   font-weight: 700
   letter-spacing: 0.05em
   line-height: 1.3
+
+code, kbd, pre, samp
+  font-family: 'TeXGyreAdventor', sans-serif
+  font-size: 9pt
+  letter-spacing: 0.2em
+  white-space: pre-wrap
+  white-space: -moz-pre-wrap
+  white-space: -pre-wrap
+  white-space: -o-pre-wrap
+  word-wrap: break-word
 
 @media print
