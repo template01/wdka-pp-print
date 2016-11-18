@@ -71,7 +71,7 @@ var printPreview = (function() {
     printRunHyphen = function() {
         Hyphenator.config({
             displaytogglebox: false,
-            minwordlength: 8,
+            minwordlength: 6,
             orphancontrol: 2,
             defaultlanguage: 'en',
             donthyphenateclassname: 'header'
