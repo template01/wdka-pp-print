@@ -10,7 +10,7 @@ var readPreview = (function() {
 
           content = $(this).parents('.tablePost').find('.tablePostContent .content').attr('data-content')
           $(this).parents('.tablePost').clone().appendTo("#readpreview")
-            .find('.tablePostContent .content').html(content)
+            .find('.tablePostContent .content').html(decodeURI(content))
           $("#readpreview").find('.tablePostMeta').append('<div class="tablePostMetaItem back"><p><span class="fa fa-long-arrow-left"></span> Back to list<p></div>')
 
           $("#readpreview").show()

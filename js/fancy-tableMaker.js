@@ -14,7 +14,7 @@ var tableMaker = (function() {
             title = element.title.rendered
             excerpt = element.excerpt.rendered
             // content = $.parseHTML(element.content.rendered)
-            content = element.content.rendered
+            content = encodeURI(element.content.rendered)
 
             if (typeof element.pure_taxonomies.publications !== "undefined") {
                 publication = element.pure_taxonomies.publications[0].name
@@ -44,7 +44,7 @@ var tableMaker = (function() {
               <div class="tablePostContent section-` + publication_section + `">
                 <h1>` + title + `</h1>
                 <div class='sort-excerpt'>` + excerpt + `</div>
-                <div class='content' data-content='` + content + `'></div>
+                <div class='content' data-content="` + content + `"></div>
                 <div class="tablePostReadMode">
                   <div>Full article <span class="fa fa-newspaper-o "></span></div>
                 </div>
