@@ -3,7 +3,7 @@ body
   font-stretch: expanded
   letter-spacing: 0.1pt
 
-p
+p, ul, ol
   font-size: $defaultFontSizeParagraph
   -webkit-hyphens: auto
   -moz-hyphens: auto
@@ -12,15 +12,25 @@ p
   letter-spacing: 0.05em
   line-height: 1.3
 
-a
+a,
   text-decoration: none
   color: black
   font-size: 9pt
   border-bottom: 1px solid black
 
-ul, ol
-  line-height: 1.3
-  letter-spacing: .05em
+.footnoteRef 
+  border: 0
+
+.footnotes
+  ol
+    a
+      border: 0
+      margin-left: 2px
+    li
+      font-size: 9pt
+
+sub, sup
+  font-size: 85%
 
 ul
   list-style-type: circle
@@ -28,8 +38,11 @@ ul
 li
   margin-bottom: 10px
 
-h1, h2, h3, h4
-  line-height: 1.1
+h1
+  line-height: 1
+
+h2, h3, h4
+  line-height: 1.2
 
 h1
   font-size: 18pt
