@@ -9,17 +9,33 @@
     background: $selectedColor
     width: 100%
     text-align: center
+    transition: background 0.15s
     a
+      transition: border-color 0.15s, color 0.15s
       line-height: calc(22px + #{$paddingMain})
       font-size: $defaultFontSizeParagraphInterface
       text-decoration: none
       color: white
       border-bottom: 1px solid white
     span
+      transition: border-color 0.15s, color 0.15s
       line-height: calc(22px + #{$paddingMain})
       font-size: $defaultFontSizeParagraphInterface
       text-decoration: none
       color: white
+    &:hover
+      background: $tableTertiaryColorDark
+      a
+        color: black
+        border-color: black
+
+      span
+        color: black
+        border-color: black
+
+
+
+
 
 #rightContent
   background: $tablePrimaryColor
@@ -64,6 +80,17 @@
       float: right
       color: white
       background: $selectedColor
+      cursor: pointer
+      transition: border-color 0.15s, color 0.15s
+      &:hover
+        background: $tableTertiaryColorDark
+        a
+          color: black
+          border-color: black
+
+        span
+          color: black
+          border-color: black
 
 
   #basket
@@ -93,7 +120,12 @@
         padding-left: $paddingMain/2
         padding-right: 2px
         margin-right: -2px
-
+    &:empty
+      // height: 100px
+      padding: $paddingMain/2
+      &:after
+        color: $tablePrimaryColorDark
+        content: 'Make a print selection to the left'
 
 
   #basketCounter
