@@ -7,8 +7,8 @@ var splashFunctions = (function() {
 
           </div>
 
-          <div id="splashRightContent">
-            <div id="splashTopContent">
+          <div class="rightContent" id="splashRightContent">
+            <div class="topContent" id="splashTopContent">
               <a href="#table" id="splashEnter">Get started <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
             </div>
             <div id="splashRightContentLogos">
