@@ -11,20 +11,20 @@ var tableMaker = (function() {
         cellObjects.map(function(element) {
 
             id = element.id
-            title = element.title.rendered
-            excerpt = element.excerpt.rendered
+            title = encodeURI(element.title.rendered)
+            excerpt = encodeURI(element.excerpt.rendered)
             // content = $.parseHTML(element.content.rendered)
             content = encodeURI(element.content.rendered)
 
             if (typeof element.pure_taxonomies.publications !== "undefined") {
-                publication = element.pure_taxonomies.publications[0].name
+                publication = encodeURI(element.pure_taxonomies.publications[0].name)
 
             } else {
                 publication = 'undefined'
             }
 
             if (typeof element.pure_taxonomies.publication_sections !== "undefined") {
-                publication_section = element.pure_taxonomies.publication_sections[0].slug
+                publication_section = encodeURI(element.pure_taxonomies.publication_sections[0].slug)
 
             } else {
                 publication_section = 'default'
@@ -34,16 +34,16 @@ var tableMaker = (function() {
             // console.log(content)
 
             deployTableInner.append(`
-            <div id="postid-` + id + `" class="tablePost section-` + publication_section + `-wrapper">
+            <div id="postid-` + id + `" class="tablePost section-` + decodeURI(publication_section) + `-wrapper">
               <div class="tablePostMeta">
-                <div class='tablePostMetaItem sort-title'><p>` + title + `</p></div>
+                <div class='tablePostMetaItem sort-title'><p>` + decodeURI(title) + `</p></div>
                 <div class='tablePostMetaItem sort-date'><p>` + date + `</p></div>
-                <div class='tablePostMetaItem sort-publication'><p>` + publication + `</p></div>
+                <div class='tablePostMetaItem sort-publication'><p>` + decodeURI(publication) + `</p></div>
                 <div class='tablePostMetaItem sort-selected postSelect' data-id="` + id + `"><p>no</p></div>
               </div>
-              <div class="tablePostContent section-` + publication_section + `">
-                <h1>` + title + `</h1>
-                <div class='sort-excerpt'>` + excerpt + `</div>
+              <div class="tablePostContent section-` + decodeURI(publication_section) + `">
+                <h1>` + decodeURI(title) + `</h1>
+                <div class='sort-excerpt'>` + decodeURI(excerpt) + `</div>
                 <div class='content' data-content="` + content + `"></div>
                 <div class="tablePostReadMode">
                   <div>Full article <span class="fa fa-newspaper-o "></span></div>
@@ -93,6 +93,7 @@ var tableMaker = (function() {
                 tableMaker.createTableCells(data, $('#table'))
                 createSortTable.listjsInit(request.getResponseHeader('X-WP-TotalPages'))
                 fancyLoad.loadWrapperHide()
+                printPreview.getPrintPreviewRoute()
 
             }
 
@@ -111,7 +112,7 @@ var tableMaker = (function() {
                 tableMaker.createTableCells(data, $('#table'))
                 // postList.reIndex()
                 selectorFunctions.setSelectedOnLoadMore(postList)
-
+                printPreview.getPrintPreviewRoute()
             }
         });
     }

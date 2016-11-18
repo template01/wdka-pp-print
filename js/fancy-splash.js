@@ -22,7 +22,7 @@ var splashFunctions = (function() {
     }
 
     var handleEnterEvent = function() {
-        $(document).on('click', '#splashEnter', function(event) {
+        $(document).on('click', '#splashTopContent', function(event) {
             event.preventDefault()
             reg = /(selected=.*?\&)|(selected=.*?s*($|;.*))/gi;
             alreadySelected = location.hash.substr(location.hash.indexOf('selected=')).split('&')[0].split('=')[1];
