@@ -5,7 +5,9 @@ var initViews = (function() {
     tableMaker.setupTable()
     selectorFunctions.initSelector()
     printPreview.initPrintpreview()
+    printPreview.printRunHyphenOnPrint()
     readPreview.initreadpreview()
+
   }
 
   var hideTableView = function() {

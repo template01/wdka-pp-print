@@ -106,6 +106,7 @@ var selectorFunctions = (function() {
 
             }
             selectorFunctions.wrapdefaultsections()
+
             sortList.reIndex()
 
         })
@@ -127,6 +128,7 @@ var selectorFunctions = (function() {
                 $("#postid-" + id).clone().appendTo("#printpreview").find('.tablePostContent .content').html(decodeURI(content))
 
                 selectorFunctions.wrapdefaultsections()
+
             })
 
         }
@@ -180,6 +182,7 @@ var selectorFunctions = (function() {
             })
         }
         selectorFunctions.wrapdefaultsections()
+        
         sortList.reIndex()
 
     }
@@ -213,6 +216,7 @@ var selectorFunctions = (function() {
 
             })
         }
+
 
         sortList.reIndex()
 
