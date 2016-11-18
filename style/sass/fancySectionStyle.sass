@@ -2,7 +2,25 @@
   #printpreview
 
     .section-response
-      font-family: monospace !important
+      padding-top: 40px
+      border-top: 1px solid black
+      p
+        font-size: $defaultFontSizeSmall
+        line-height: 1.35
+        letter-spacing: 0.06em
+      h1
+        font-size: 14pt
+      h2
+      h3
+        font-size: 10.5pt !important
+      -webkit-column-count: 3
+      -moz-column-count: 3
+      column-count: 3
+      -webkit-column-gap: 10px
+      -moz-column-gap: 10px
+      column-gap: 10px
+      -moz-column-fill: auto
+      column-fill: auto
 
     .section-introduction-wrapper
       page-break-after: always !important
@@ -17,8 +35,14 @@
         max-width: 8.8cm
         margin: 10px 1cm 0.5cm 0
       h2
-      h3
         font-weight: 700
+        font-size: 18pt
+        float: left
+        margin: -15px 1cm 0.5cm 0
+        width: 8.8cm
+        clear: both
+      h3
+        font-size: 18pt
         float: left
         margin: -15px 1cm 0.5cm 0
         width: 8.8cm
@@ -42,6 +66,7 @@
       column-gap: 20px
       -moz-column-fill: auto
       column-fill: auto
+      padding-bottom: 40px
 
       .section-default
         -webkit-column-count: auto
