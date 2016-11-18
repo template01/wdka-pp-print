@@ -8,16 +8,28 @@ var readPreview = (function() {
 
         $(document).on('click', showEvent, function() {
 
-          content = $(this).parents('.tablePost').find('.tablePostContent .content').attr('data-content')
-          $(this).parents('.tablePost').clone().appendTo("#readpreview")
-            .find('.tablePostContent .content').html(decodeURI(content))
-          $("#readpreview").find('.tablePostMeta').append('<div class="tablePostMetaItem back"><p><span class="fa fa-long-arrow-left"></span> Back to list<p></div>')
-
-          $("#readpreview").show()
-          $("#tableWrapper").hide()
-          $("#rightContent").children().addClass('disable')
+          reg = /(selected=.*?\&)|(selected=.*?s*($|;.*))/gi;
+          alreadySelected = location.hash.substr(location.hash.indexOf('selected=')).split('&')[0].split('=')[1];
+          if (alreadySelected === undefined || alreadySelected === null) {
+              alreadySelected = ''
+          }
+          routie('read/'+id+'/selected=' + alreadySelected);
 
         })
+    }
+
+    getreadPreviewRoute = function(postid){
+
+      postElem = $("#postid-"+postid)
+
+      console.log(postElem)
+      content = postElem.find('.tablePostContent .content').attr('data-content')
+
+      postElem.clone().appendTo("#readpreview")
+        .find('.tablePostContent .content').html(decodeURI(content))
+      $("#readpreview").find('.back').remove()
+      $("#readpreview").find('.tablePostMeta').append('<div class="tablePostMetaItem back"><p><span class="fa fa-long-arrow-left"></span> Back to list<p></div>')
+
     }
 
 
@@ -25,10 +37,12 @@ var readPreview = (function() {
 
         $(document).on('click', closeEvent, function() {
 
-          $("#readpreview").hide().empty()
-          $("#printpreview").hide()
-          $("#tableWrapper").show()
-          $("#rightContent").children().removeClass('disable')
+          reg = /(selected=.*?\&)|(selected=.*?s*($|;.*))/gi;
+          alreadySelected = location.hash.substr(location.hash.indexOf('selected=')).split('&')[0].split('=')[1];
+          if (alreadySelected === undefined || alreadySelected === null) {
+              alreadySelected = ''
+          }
+          routie('table/selected=' + alreadySelected);
 
         })
     }
@@ -44,6 +58,6 @@ var readPreview = (function() {
         this.closereadPreview('.back')
     }
 
-    return {createReadElements: createReadElements, addToreadPreview: addToreadPreview, getreadPreview: getreadPreview, closereadPreview:closereadPreview, initreadpreview: initreadpreview};
+    return {getreadPreviewRoute:getreadPreviewRoute, createReadElements: createReadElements, addToreadPreview: addToreadPreview, getreadPreview: getreadPreview, closereadPreview:closereadPreview, initreadpreview: initreadpreview};
 
 })();

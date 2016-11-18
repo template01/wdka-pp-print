@@ -23,6 +23,33 @@ var initViews = (function() {
     $("#rightContent").children().removeClass('disable')
   }
 
+  var hideReadView = function(){
+    $("#readpreview").hide().empty()
+    $("#printpreview").hide()
+    $("#tableWrapper").show()
+  }
+
+
+  var showReadView = function(){
+    $("#readpreview").show()
+    $("#tableWrapper").hide()
+    $("#rightContent").children().addClass('disable')
+  }
+
+
+  var hidePrintView = function(){
+    $("#printpreview").hide()
+
+  }
+
+
+  var showPrintView = function(){
+    $("#printpreview").show()
+    $("#tableWrapper").hide()
+    $("#rightContent").children().addClass('disable')
+  }
+
+
   var hideSplashView = function() {
     $('#splash').hide()
     $("#rightContent").children().removeClass('disable')
@@ -43,6 +70,10 @@ var initViews = (function() {
   }
 
   return {
+    showReadView:showReadView,
+    hideReadView:hideReadView,
+    showPrintView:showPrintView,
+    hidePrintView:hidePrintView,
     showLoadView:showLoadView,
     showSplashView:showSplashView,
     hideSplashView:hideSplashView,

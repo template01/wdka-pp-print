@@ -27,19 +27,19 @@ var printPreview = (function() {
 
         $(document).on('click', showEvent, function() {
             if($("#basket").children().length>0){
-              $("#rightContent").children().toggleClass('disable')
-              $("#printpreview").toggle()
-              $("#tableWrapper").toggle()
-              $("#printpreview").find('.tablePostMeta').empty()
-              if ($('#printpreview:in-viewport').length > 0) {
-                  $("#printpreview").find('.tablePostMeta').append(`
-                      <div id="printpreviewSelection" class="tablePostMetaItem long"><p>Print Preview: </p></div>
-                      <div class="tablePostMetaItem back"><p><span class="fa fa-long-arrow-left"></span> Back to list<p></div>
-                      `)
-                  $("#basket .basketItem").each(function() {
-                      $("#printpreviewSelection p").append($(this).find('p').text() + ', ')
-                  })
+
+              reg = /(selected=.*?\&)|(selected=.*?s*($|;.*))/gi;
+              alreadySelected = location.hash.substr(location.hash.indexOf('selected=')).split('&')[0].split('=')[1];
+              if (alreadySelected === undefined || alreadySelected === null) {
+                  alreadySelected = ''
               }
+              routie('preview/selected=' + alreadySelected);
+              window.setTimeout(function(){
+
+                printPreview.getPrintPreviewRoute()
+              },10)
+
+
             }else{
               $(showEvent).addClass('makeSelection')
               window.setTimeout(function(){
@@ -49,6 +49,22 @@ var printPreview = (function() {
 
 
         })
+
+    }
+
+    getPrintPreviewRoute = function(){
+
+      $("#printpreview").find('.tablePostMeta').empty()
+      if ($('#printpreview:in-viewport').length > 0) {
+          $("#printpreview").find('.tablePostMeta').append(`
+              <div id="printpreviewSelection" class="tablePostMetaItem long"><p>Print Preview: </p></div>
+              <div class="tablePostMetaItem back"><p><span class="fa fa-long-arrow-left"></span> Back to list<p></div>
+              `)
+          $("#basket .basketItem").each(function() {
+              $("#printpreviewSelection p").append($(this).find('p').text() + ', ')
+          })
+      }
+
 
     }
 
@@ -67,7 +83,8 @@ var printPreview = (function() {
         createShowEventElements: createShowEventElements,
         addToPrintPreview: addToPrintPreview,
         getPrintPreview: getPrintPreview,
-        initPrintpreview: initPrintpreview
+        initPrintpreview: initPrintpreview,
+        getPrintPreviewRoute:getPrintPreviewRoute
     };
 
 })();
