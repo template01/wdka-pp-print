@@ -27,7 +27,7 @@ var selectorFunctions = (function() {
             window.setTimeout(function() {
                 basketItem.prev().insertAfter(basketItem);
                 selectorFunctions.changeBasketOrderHash()
-                
+
                 window.setTimeout(function() {
                     selectorFunctions.setSelectedOrderPrintPreview()
                 }, 10)
@@ -93,7 +93,7 @@ var selectorFunctions = (function() {
 
                 content = $("#postid-" + $(this).attr('data-id')).find('.tablePostContent .content').attr('data-content')
 
-                $("#postid-" + $(this).attr('data-id')).clone().appendTo("#printpreview").find('.tablePostContent .content').html(content)
+                $("#postid-" + $(this).attr('data-id')).clone().appendTo("#printpreview").find('.tablePostContent .content').html(decodeURI(content))
 
 
             } else {
@@ -124,7 +124,7 @@ var selectorFunctions = (function() {
             selected.split(",").map(function(id, index) {
 
                 content = $("#postid-" + id).find('.tablePostContent .content').attr('data-content')
-                $("#postid-" + id).clone().appendTo("#printpreview").find('.tablePostContent .content').html(content)
+                $("#postid-" + id).clone().appendTo("#printpreview").find('.tablePostContent .content').html(decodeURI(content))
 
                 selectorFunctions.wrapdefaultsections()
             })
@@ -172,7 +172,7 @@ var selectorFunctions = (function() {
                     $('.postSelect[data-id=' + id + ']').addClass('selected').find('p').text('1')
 
                     content = $("#postid-" + id).find('.tablePostContent .content').attr('data-content')
-                    $("#postid-" + id).clone().appendTo("#printpreview").find('.tablePostContent .content').html(content)
+                    $("#postid-" + id).clone().appendTo("#printpreview").find('.tablePostContent .content').html(decodeURI(content))
 
                     selectorFunctions.addToBasket($('.postSelect[data-id=' + id + ']').parents('.tablePost'), id)
                 }
@@ -205,7 +205,7 @@ var selectorFunctions = (function() {
                     $('.postSelect[data-id=' + id + ']').addClass('selected').find('p').text('1')
 
                     content = $("#postid-" + id).find('.tablePostContent .content').attr('data-content')
-                    $("#postid-" + id).clone().appendTo("#printpreview").find('.tablePostContent .content').html(content)
+                    $("#postid-" + id).clone().appendTo("#printpreview").find('.tablePostContent .content').html(decodeURI(content))
 
                     selectorFunctions.addToBasket($('.postSelect[data-id=' + id + ']').parents('.tablePost'), id)
 
