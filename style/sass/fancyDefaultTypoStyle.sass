@@ -12,7 +12,7 @@ p, ul, ol
   letter-spacing: 0.05em
   line-height: $defaultLineHeight
 
-a
+a, u
   text-decoration: none
   color: black
   font-size: $defaultFontSizeSmall
@@ -24,7 +24,6 @@ a
 .footnotes, .endnotes
   ol, ul
     a
-      border: 0
       margin-left: 2px
     li
       font-size: $defaultFontSizeSmall
@@ -33,11 +32,12 @@ a
 sub, sup
   font-size: 85%
 
-ul
-  list-style-type: circle
-
-li
+ol>li
   margin-bottom: 10px
+
+ul
+  list-style: disc inside none
+  padding: 0
 
 h1
   line-height: 1.1

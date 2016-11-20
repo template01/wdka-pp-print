@@ -1,0 +1,2 @@
+@media print{#leftContent #printpreview>*{margin-top:0 !important;font-size:20pt !important}#rightContent{display:none}#tableWrapper{display:none !important}#readpreview{display:none !important}#printpreview{position:relative !important;display:block !important;width:100% !important}#printpreview .tablePostMeta{display:none}a[href]:after{content:none !important}#leftContent #printpreview>*{margin-top:0 !important}.footnotes ol a,.endnotes ol a{display:none}@page{size:A4;margin:1cm;margin-top:3.5cm}}
+/*# sourceMappingURL=fancyResetPrintStyle.css.map */

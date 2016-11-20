@@ -3,16 +3,20 @@
 
     .section-response
       padding-top: 40px
-      border-top: 1px solid black
-      p
+      p, ul, ol
         font-size: $defaultFontSizeSmall
         line-height: 1.35
-        letter-spacing: 0.06em
+        letter-spacing: 0.05em
       h1
         font-size: 14pt
       h2
       h3
         font-size: 10.5pt !important
+      h4
+        font-size: 8.5pt
+        font-weight: 400
+        letter-spacing: 0.05em
+        margin-top: -10px
       -webkit-column-count: 3
       -moz-column-count: 3
       column-count: 3
@@ -22,13 +26,18 @@
       -moz-column-fill: auto
       column-fill: auto
 
+    .section-response-wrapper
+      page-break-before: always !important
+      page-break-after: always !important
+
     .section-introduction-wrapper
       page-break-after: always !important
 
     .section-introduction
-      padding-right: 3cm
+      padding-right: 2.5cm
       p, ul, ol
         font-size: 12pt
+        line-height: 1.3
       h1
         font-size: 22pt
         float: left !important
@@ -47,6 +56,13 @@
         margin: -15px 1cm 0.5cm 0
         width: 8.8cm
         clear: both
+      h4
+        font-size: 15pt
+        float: left
+        margin: -15px 1cm 0.5cm 0
+        width: 8.8cm
+        clear: both
+        font-weight: 400
     .section-default
       -webkit-column-count: 2
       -moz-column-count: 2

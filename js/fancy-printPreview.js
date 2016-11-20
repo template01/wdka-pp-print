@@ -76,7 +76,7 @@ var printPreview = (function() {
             defaultlanguage: 'en',
             donthyphenateclassname: 'header'
         });
-        Hyphenator.run();
+        // Hyphenator.run();
 
     }
 
