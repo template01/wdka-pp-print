@@ -1,7 +1,7 @@
 @media print
 
   #leftContent #printpreview>*
-    margin-top: 0 !important
+    // margin-top: 0 !important
     font-size: 20pt !important
 
   #rightContent
@@ -24,13 +24,22 @@
     content: none !important
 
   #leftContent #printpreview>*
-    margin-top: 0 !important
+    // margin-top: 0 !important
 
+  // h1
+  //   margin-top: 0px !important
 
-  .footnotes, .endnotes
-    ol
-      a
-        display: none
+  #leftContent #printpreview
+    // margin-top: -1cm
+
+  .footnotes ol a, .endnotes ol a
+    display: none
+
+  .section-introduction-wrapper
+    margin-top: -1cm !important
+
+  .section-response-wrapper
+    margin-top: -1cm !important
 
   @page
     size: A4
