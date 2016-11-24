@@ -8,11 +8,18 @@ var readPreview = (function() {
 
         $(document).on('click', showEvent, function() {
 
+
           reg = /(selected=.*?\&)|(selected=.*?s*($|;.*))/gi;
           alreadySelected = location.hash.substr(location.hash.indexOf('selected=')).split('&')[0].split('=')[1];
           if (alreadySelected === undefined || alreadySelected === null) {
               alreadySelected = ''
           }
+
+          id = $(this).parents('.tablePost').attr('id').slice(7)
+
+          console.log(id)
+
+
           routie('read/'+id+'/selected=' + alreadySelected);
 
         })
