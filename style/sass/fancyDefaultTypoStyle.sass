@@ -49,8 +49,13 @@ h2, h3, h4
   line-height: 1.2
 
 h1
-  font-size: 18pt
+  font-size: 25pt
   margin: 0
+
+h1
+  br
+    display: none
+  letter-spacing: initial
 
 h2
   font-size: 14pt
@@ -73,3 +78,10 @@ code, kbd, pre, samp
   word-wrap: break-word
 
 @media print
+
+  h1
+    font-size: 18pt
+
+  h1, h2, h3
+    letter-spacing: 0.025em
+

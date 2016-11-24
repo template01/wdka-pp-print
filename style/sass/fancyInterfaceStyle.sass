@@ -39,6 +39,7 @@
 
 #rightContent
   background: $tablePrimaryColor
+  color: white
   width: 20%
   position: fixed
   right: 0
@@ -83,14 +84,14 @@
       cursor: pointer
       transition: border-color 0.15s, color 0.15s
       &:hover
-        background: $tableTertiaryColorDark
-        a
-          color: black
-          border-color: black
+        background: $selectedNotColor
+      //  a
+      //    color: black
+      //    border-color: black
 
-        span
-          color: black
-          border-color: black
+      //  span
+      //    color: black
+      //    border-color: black
 
 
   #basket
@@ -113,7 +114,7 @@
         &:before
           content: "- "
       span
-        color: $tablePrimaryColorDark
+        color: $tableTertiaryColor
         cursor: pointer
         float: right
         line-height: 20px
@@ -124,7 +125,7 @@
       // height: 100px
       padding: $paddingMain/2
       &:after
-        color: $tablePrimaryColorDark
+        color: $tableTertiaryColor
         content: 'Make a print selection to the left'
 
 
@@ -172,6 +173,7 @@
     .sort
       padding: $paddingMain/2
       background: $tablePrimaryColor
+      color: $tableTertiaryColor
       &.asc
         &:after
           color: $tablePrimaryColorDark
@@ -201,7 +203,7 @@
 
 
     .sort:not(:last-child)
-      border-right: 2px solid $secondaryColor
+      border-right: 2px solid $tableTertiaryColor
 
 
     button
@@ -218,7 +220,7 @@
 .tablePost
   .tablePostContent
     padding: $paddingMain/2
-    background: $tableTertiaryColor
+    // background: $tableTertiaryColor
     float: left
     width: 100%
     display: inline-block
@@ -228,7 +230,7 @@
     .sort-excerpt
       width: 75%
     .tablePostReadMode
-      background: $tableTertiaryColorDark
+      background: $tableSecondaryColor
       width: 25%
       cursor: pointer
 
@@ -251,7 +253,7 @@
     line-height: calc(22px + #{$paddingMain})
     width: 100%
     display: inline-block
-    background: $tablePrimaryColor
+    background: $tableSecondaryColor
     .tablePostMetaItem
       width: 25%
       float: left
@@ -265,10 +267,12 @@
         text-overflow: ellipsis
         width: 100%
         padding: 0 $paddingMain/2
+        font-weight: bold
 
       &.back
         cursor: pointer
         background: $tablePrimaryColorDark
+        color: $tableTertiaryColor
 
       &.postSelect
         background: $selectedNotColor

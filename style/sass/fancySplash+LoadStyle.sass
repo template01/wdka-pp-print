@@ -23,7 +23,11 @@
     #splashTopContent
       cursor: pointer
       &:hover
-        background: $tableTertiaryColorDark
+        background: $selectedNotColor
+        a
+          color: $tableTertiaryColor
+          border-bottom: 1px solid $tableTertiaryColor
+
     #splashRightContentLogos
       position: absolute
       bottom: 0
@@ -42,3 +46,5 @@
   background: $tablePrimaryColor
   text-align: right
   z-index: 999999
+  color: $tableTertiaryColor
+
