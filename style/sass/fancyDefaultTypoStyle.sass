@@ -51,11 +51,11 @@ h2, h3, h4
 h1
   font-size: 25pt
   margin: 0
+  letter-spacing: initial
 
-h1
+h1, .basketItem, .tablePostMeta
   br
     display: none
-  letter-spacing: initial
 
 h2
   font-size: 14pt
@@ -78,6 +78,9 @@ code, kbd, pre, samp
   word-wrap: break-word
 
 @media print
+
+  p, ul, ol
+    font-size: 10,5
 
   h1
     font-size: 18pt
