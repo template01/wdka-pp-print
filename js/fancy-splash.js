@@ -3,7 +3,82 @@ var splashFunctions = (function() {
         $('#mainApp').append(`<div id="splash">
           <div id="splashLeftContent">
             <div id="splashHeader"></div>
-            <div id="splashIntro"><h1>What is this?</h1><p>The Autonomous Practices in particular start from the drive of the student, which is fuelled by passion, fascinations, discontent and sometimes even anger. They can function as very strong motors if you channel them well. The Autonomous Practices open up fields to critically engaged art and design students that they previously were able to explore in very limited ways. These fields can be seen as wastelands, in a positive sense. A wasteland may be overlooked, but it can be explored, it usually is full of potential and possibilities, something that can be built on and developed. However it is also rough territory; you need strong roots to survive.</p></div>
+            <div id="splashIntro">
+                      <div class="splashColLeft">
+                        <h1>The<br>Art School<br>Reinvented</h1>
+                      </div>
+                      <div class="splashColRight">
+                        <h1><br><br>Autonomous,<br/>Commercial<br/>and Social<br/>Pratices</h1>
+
+                      </div>
+                      <div class="splashColRight clearRight">
+                        <p>
+                          Hybrid Publishing Practices
+                          This publication was developed by Hybrid
+                          Publishing Practices at the Willem de Kooning
+                          Academy. Researching and experimenting
+                          across a broad range of processes native to
+                          digital and analog media, Hybrid Publishing
+                          Practices fosters novel approaches to design,
+                          writing, reading, and dissemination, and
+                          embraces the pluriformity of publishing made
+                          possible through the legacies of Gutenberg’s
+                          press to present-day technologies.
+                          The Art School Reinvented is an ongoing
+                          web-to-print publication finding it’s origin at
+                          www.publishpractices.wdka.nl from where
+                          each reader can print their own selection.
+                          For more information about Hybrid Publishing
+                          Practices or details about the development
+                          of this publication go to
+                          www.hybridpublishing.wdka.nl
+                        </p>
+                      </div>
+
+                      <div class="splashColLeft">
+                        <h2>Hybrid Publishing Practices</h2>
+                        <p>
+                          This publication was developed by Hybrid
+                          Publishing Practices at the Willem de Kooning
+                          Academy. Researching and experimenting
+                          across a broad range of processes native to
+                          digital and analog media, Hybrid Publishing
+                          Practices fosters novel approaches to design,
+                          writing, reading, and dissemination, and
+                          embraces the pluriformity of publishing made
+                          possible through the legacies of Gutenberg’s
+                          press to present-day technologies.
+                          The Art School Reinvented is an ongoing
+                          web-to-print publication finding it’s origin at
+                          www.publishpractices.wdka.nl from where
+                          each reader can print their own selection.
+                          For more information about Hybrid Publishing
+                          Practices or details about the development
+                          of this publication go to
+                          www.hybridpublishing.wdka.nl
+                        </p>
+                      </div>
+
+                      <div class="splashColRight">
+                      <h2>Colophon</h2>
+                        <p>
+                          Practices fosters novel approaches to design,
+                          writing, reading, and dissemination, and
+                          embraces the pluriformity of publishing made
+                          possible through the legacies of Gutenberg’s
+                          press to present-day technologies.
+                          The Art School Reinvented is an ongoing
+                          web-to-print publication finding it’s origin at
+                          www.publishpractices.wdka.nl from where
+                          each reader can print their own selection.
+                          For more information about Hybrid Publishing
+                          Practices or details about the development
+                          of this publication go to
+                          www.hybridpublishing.wdka.nl
+                        </p>
+                      </div>
+
+            </div>
 
           </div>
 
@@ -56,6 +131,6 @@ var splashFunctions = (function() {
         makeSplashContainer: makeSplashContainer,
         initSplash: initSplash,
         handleEnterEvent: handleEnterEvent,
-        handleToSplashEvent:handleToSplashEvent
+        handleToSplashEvent: handleToSplashEvent
     };
 })();

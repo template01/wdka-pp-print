@@ -3,7 +3,6 @@
   #splashLeftContent
     width: 80%
     float: left
-
     padding: $paddingMain/2
 
     #splashHeader
@@ -14,10 +13,31 @@
       top: 0
       height: calc(22px + #{$paddingMain})
 
-
-
     #splashIntro
+
+
+
       margin-top: calc(22px + #{$paddingMain})
+
+      .splashColRight,
+      .splashColLeft
+        &.clearRight
+          margin-right: 50%
+        &.clearLeft
+          margin-left: 50%
+        width: 50%
+        float: left
+        padding: calc(22px + #{$paddingMain})
+        padding-top: 22px
+
+      p
+        font-size: $defaultFontSizeParagraphInterface !important
+
+      h1
+        font-size: 5vw
+        color: $sectionPrefaceColor
+        br
+          display: block
 
   #splashRightContent
     #splashTopContent
@@ -47,4 +67,3 @@
   text-align: right
   z-index: 999999
   color: $tableTertiaryColor
-
