@@ -33,10 +33,6 @@
         color: black
         border-color: black
 
-
-
-
-
 #rightContent
   background: $tablePrimaryColor
   color: white
@@ -79,7 +75,7 @@
       line-height: calc(22px + #{$paddingMain})
       text-align: center
       float: right
-      color: white
+      color: $tablePrimaryColor
       background: $selectedColor
       cursor: pointer
       transition: border-color 0.15s, color 0.15s
@@ -109,6 +105,7 @@
       p
         max-width: calc(100% - (22px + #{$paddingMain}))
         font-size: $defaultFontSizeParagraphInterface
+        color: $tableSecondaryColor
         margin: 0
         float: left
         &:before
@@ -155,9 +152,6 @@
     line-height: calc(22px)
     cursor: pointer
 
-
-
-
 #tableWrapper
   width: 80%
   float: left
@@ -176,12 +170,12 @@
       color: $tableTertiaryColor
       &.asc
         &:after
-          color: $tablePrimaryColorDark
+          color: $tableSecondaryColor
           font-family: FontAwesome
           content: "\f15d"
       &.desc
         &:after
-          color: $tablePrimaryColorDark
+          color: $tableSecondaryColor
           font-family: FontAwesome
           content: "\f15e"
 
@@ -231,6 +225,7 @@
       width: 75%
     .tablePostReadMode
       background: $tableSecondaryColor
+      font-weight: 700
       width: 25%
       cursor: pointer
       // float: right
@@ -270,8 +265,8 @@
 
       &.back
         cursor: pointer
-        background: $tablePrimaryColorDark
-        color: $tableTertiaryColor
+        // background: $tablePrimaryColorDark
+        // color: $tableTertiaryColor
 
       &.postSelect
         background: $selectedNotColor
@@ -284,7 +279,7 @@
           &:after
             content: "Click to select" !important
         &:after
-          color: white
+          color: $tablePrimaryColor
           content: "✘"
 
         &.selected
@@ -293,7 +288,7 @@
             &:after
               content: "Click to deselect" !important
           &:after
-            color: white
+            color: $tablePrimaryColor
             content: "✔"
     p
       margin: 0px
