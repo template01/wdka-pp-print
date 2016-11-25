@@ -1,5 +1,5 @@
 /*
-Error: Undefined variable: "$selectedColor".
+Error: Undefined variable: "$sectionPrefaceColor".
         on line 9 of style/sass/fancyInterfaceStyle.sass
 
 4:   right: 0
@@ -7,7 +7,7 @@ Error: Undefined variable: "$selectedColor".
 6:   height: 100%
 7: 
 8:   .topContent
-9:     background: $selectedColor
+9:     background: $sectionPrefaceColor
 10:     width: 100%
 11:     text-align: center
 12:     transition: background 0.15s
@@ -78,4 +78,4 @@ style/sass/fancyInterfaceStyle.sass:9
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$selectedColor\".\A         on line 9 of style/sass/fancyInterfaceStyle.sass\A \A 4:   right: 0\A 5:   position: fixed\A 6:   height: 100%\A 7: \A 8:   .topContent\A 9:     background: $selectedColor\A 10:     width: 100%\A 11:     text-align: center\A 12:     transition: background 0.15s\A 13:     a\A 14:       transition: border-color 0.15s, color 0.15s"; }
+  content: "Error: Undefined variable: \"$sectionPrefaceColor\".\A         on line 9 of style/sass/fancyInterfaceStyle.sass\A \A 4:   right: 0\A 5:   position: fixed\A 6:   height: 100%\A 7: \A 8:   .topContent\A 9:     background: $sectionPrefaceColor\A 10:     width: 100%\A 11:     text-align: center\A 12:     transition: background 0.15s\A 13:     a\A 14:       transition: border-color 0.15s, color 0.15s"; }
