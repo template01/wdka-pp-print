@@ -17,7 +17,7 @@ var tableMaker = (function() {
             content = encodeURI(element.content.rendered)
 
             if (typeof element.pure_taxonomies.publications !== "undefined") {
-                publication = encodeURI(element.pure_taxonomies.publications[0].name)
+                publication = encodeURI(element.pure_taxonomies.publications[0].slug)
 
             } else {
                 publication = 'undefined'
@@ -34,7 +34,7 @@ var tableMaker = (function() {
             // console.log(content)
 
             deployTableInner.append(`
-            <div id="postid-` + id + `" class="tablePost section-`+decodeURI(publication_section)+`-part section-` + decodeURI(publication_section) + `-wrapper">
+            <div id="postid-` + id + `" class="tablePost section-`+decodeURI(publication)+`-part section-` + decodeURI(publication_section) + `-wrapper">
               <div class="tablePostMeta">
                 <div class='tablePostMetaItem sort-title'><p>` + decodeURI(title) + `</p></div>
                 <div class='tablePostMetaItem sort-date'><p>` + date + `</p></div>
