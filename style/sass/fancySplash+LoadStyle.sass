@@ -56,15 +56,23 @@
         padding-top: 22px
 
       p
-        font-size: $defaultFontSizeParagraphInterface !important
+        font-size: 1.2vw
         // font-weight: bold
 
       h1
-        font-size: 5vw
+        font-size: 5.2vw
         color: $sectionPrefaceColor
+        line-height: 1
 
         br
           display: block
+
+      .splashColRight
+        p:first-child
+          font-size: 1.2vw
+        p, h2
+          font-size: 0.9vw
+          font-weight: 400
 
   #splashRightContent
     background: white
@@ -84,6 +92,7 @@
       padding: $paddingMain / 2
 
       img
+        padding: $paddingMain / 2
         &:first-of-type
           margin-right: $paddingMain / 2
 
