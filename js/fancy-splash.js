@@ -30,8 +30,8 @@ var splashFunctions = (function() {
               <a href="#table" id="splashEnter">Get started <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
             </div>
             <div id="splashRightContentLogos">
-              <img src="http://beyond-social.org/img/wdkalogo_bw.svg"/>
-              <img src="http://beyond-social.org/img/wdkalogo_2.svg"/>
+              <img src="/img/wdkalogo_blue.svg"/>
+              <img src="/img/HHP_logo_blauw.svg"/>
             </div>
           </div>
 
