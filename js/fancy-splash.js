@@ -9,6 +9,7 @@ var splashFunctions = (function() {
     var getSplashContent = function() {
         this.requestColophon().success(function(data) {
             $("#splashIntro").append(data[0].content.rendered)
+            splashFunctions.styleChanges()
         }).error(function() {
             console.log('error')
             $("#splashIntro").append('There was an error!')
@@ -18,7 +19,12 @@ var splashFunctions = (function() {
     var makeSplashContainer = function() {
         $('#mainApp').append(`<div id="splash">
           <div id="splashLeftContent">
-            <div id="splashHeader"></div>
+            <div id="splashHeader">
+              <div><p>WDKA</p></div>
+              <div><p>The Art School Reinvented</p></div>
+              <div><p>Hybrid Publishing</p></div>
+              <div><p>Colophon</p></div>
+            </div>
             <div id="splashIntro">
 
             </div>
@@ -37,6 +43,9 @@ var splashFunctions = (function() {
 
         </div>`)
 
+    }
+    var styleChanges = function(){
+      $('.afterFixedTitle').css({'margin-top':$(".fixedTitle").offset().top+$(".fixedTitle").outerHeight()})
     }
 
     var handleEnterEvent = function() {
@@ -72,6 +81,7 @@ var splashFunctions = (function() {
         this.handleEnterEvent()
     }
     return {
+        styleChanges: styleChanges,
         requestColophon: requestColophon,
         getSplashContent: getSplashContent,
         makeSplashContainer: makeSplashContainer,

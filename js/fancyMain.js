@@ -15,11 +15,13 @@ $(document).ready(function() {
             initViews.hideSplashView()
 
 
+
         },
 
         'table table/*': function() {
             if (tableStarted == false) {
                 initViews.initTableView()
+
                 tableStarted = true
             }
             initViews.showTableView()

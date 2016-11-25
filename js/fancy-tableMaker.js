@@ -102,6 +102,10 @@ var tableMaker = (function() {
                 fancyLoad.loadWrapperHide()
                 printPreview.getPrintPreviewRoute()
 
+                window.setTimeout(function(){
+                  tourHelpers.tableTour()
+                },800)
+
             }
 
             //           function(data, textStatus, request){

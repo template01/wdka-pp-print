@@ -10,10 +10,37 @@
       background: $tablePrimaryColor
       left: 0
       top: 0
+      display: flex
+      align-items: center
+      justify-content: flex-end
       height: calc(22px + #{$paddingMain})
+      div
+        width: 25%
+        p
+          color: white
+          padding-left: $paddingMain/2
+          padding-right: $paddingMain/2
 
     #splashIntro
       margin-top: calc(22px + #{$paddingMain})
+
+      .fixedTitle
+        position: fixed
+        width: 80%
+        z-index: -1
+        top: calc(22px + #{$paddingMain} + #{$paddingMain})
+
+        // margin-top: -500px
+
+
+      .afterFixedTitle
+        // margin-top: 500px
+        display: inline-block
+        background: rgba(255,255,255,0.925)
+        -webkit-box-shadow: 0px -26px 54px 14px rgba(255,255,255,0.925)
+        -moz-box-shadow: 0px -26px 54px 14px rgba(255,255,255,0.925)
+        box-shadow: 0px -26px 54px 14px rgba(255,255,255,0.925)
+
 
       .splashColRight,
       .splashColLeft
@@ -30,6 +57,7 @@
 
       p
         font-size: $defaultFontSizeParagraphInterface !important
+        // font-weight: bold
 
       h1
         font-size: 5vw
