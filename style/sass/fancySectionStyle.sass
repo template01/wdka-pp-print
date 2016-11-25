@@ -1,22 +1,22 @@
 .section-preface
   p, ul, ol, h1, h2, h3, h4, h5, h6
-    color: $sectionPrefaceColor !important
+    color: $sectionPrefaceColor
   a, u
     border-bottom: 1px solid $sectionPrefaceColor
     color: $sectionPrefaceColor
 
-.section-introduction
-  background: url('../../img/pp_01.gif')
+.section-autonomous-part,
+.section-autonomous-part .tablePostContent
+  background: #fcd3c5
 
-#leftContent
-  #readpreview
-    .section-preface
-      p, ul, ol, h1, h2, h3, h4, h5, h6
-        color: $sectionPrefaceColor
-      background: gainsboro
-      a, u
-        border-bottom: 1px solid $sectionPrefaceColor
-        color: $sectionPrefaceColor
+.section-commercial-part,
+.section-commercial-part .tablePostContent
+  background: #d3e0d2
+
+.section-social-part,
+.section-social-part .tablePostContent
+  background: #cceffc
+
 
 #leftContent
   #printpreview
@@ -58,6 +58,33 @@
     .section-preface
       page-break-after: always !important
 
+    .section-default
+      -webkit-column-count: 2
+      -moz-column-count: 2
+      column-count: 2
+      -webkit-column-gap: 20px
+      -moz-column-gap: 20px
+      column-gap: 20px
+      -moz-column-fill: auto
+      column-fill: auto
+
+    .section-default-wrapper-outer
+      -webkit-column-count: 2
+      -moz-column-count: 2
+      column-count: 2
+      -webkit-column-gap: 20px
+      -moz-column-gap: 20px
+      column-gap: 20px
+      -moz-column-fill: auto
+      column-fill: auto
+      padding-bottom: 40px
+
+      .section-default
+        -webkit-column-count: auto
+        -moz-column-count: auto
+        column-count: auto
+
+  #printpreview, #readpreview
     .section-introduction, .section-preface
       padding-right: 3cm
       p, ul, ol
@@ -88,30 +115,4 @@
         width: 8.8cm
         clear: both
         font-weight: 400
-
-    .section-default
-      -webkit-column-count: 2
-      -moz-column-count: 2
-      column-count: 2
-      -webkit-column-gap: 20px
-      -moz-column-gap: 20px
-      column-gap: 20px
-      -moz-column-fill: auto
-      column-fill: auto
-
-    .section-default-wrapper-outer
-      -webkit-column-count: 2
-      -moz-column-count: 2
-      column-count: 2
-      -webkit-column-gap: 20px
-      -moz-column-gap: 20px
-      column-gap: 20px
-      -moz-column-fill: auto
-      column-fill: auto
-      padding-bottom: 40px
-
-      .section-default
-        -webkit-column-count: auto
-        -moz-column-count: auto
-        column-count: auto
 

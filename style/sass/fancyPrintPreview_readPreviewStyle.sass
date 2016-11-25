@@ -1,14 +1,46 @@
 #leftContent
   #printpreview
+    p, ul, ol, h1, h2, h3, h4, h5, h6
+      color: initial
+    a, u
+      color: initial
+      border-bottom: 1px solid black
     .sort-title,.sort-date,.sort-publication
       display: none
-    background: white !important
+
+    .section-autonomous-part, 
+    .section-autonomous-part .tablePostContent,
+    .section-commer-part,
+    .section-commercial-part .tablePostContent,
+    .section-social-part,
+    .section-social-part .tablePostContent
+      background: #fff
+
+    img
+      filter: grayscale(100%)
+
+  #readpreview
+    .tablePost
+      padding: 40px 25% 40px 40px
+      .content
+        h3
+          font-size: 13.5pt
+        p
+          font-size: 12pt
+          line-height: 1.5
+          cursor: pointer
+        img, .wp-caption
+          max-width: 40%
+        .footnotes ol li, .footnotes ul li, .endnotes ol li, .endnotes ul li
+          font-size: 9pt
+    .section-preface, .section-introduction
+      padding-right: initial
   #printpreview,#readpreview
     > *
-    // margin-top: 40px
+    margin-top: 40px
     display: none
     position: absolute
-    min-height: 100vh
+    // min-height: 100vh
     left: 0
     background: $tableTertiaryColor
     // width: 100%
@@ -67,7 +99,7 @@
         display: block
 
         img
-          max-width: 100% !important
+          max-width: 100%
 
       figcaption, .wp-caption-text
         font-size: $defaultFontSizeSmall
