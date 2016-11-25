@@ -1,27 +1,18 @@
 var splashFunctions = (function() {
 
-    var requestColophon = function(){
-      $.ajax({
-          type: 'GET',
-          url: 'http://wdka-pp.template-studio.nl/wp-json/wp/v2/posts?filter[category_name]=wdka-pp-colophon',
-          // url: './js/initposts.json',
-          async: true,
-          success: function(data, textStatus, request) {
-            // $("#splashIntro").append(data[0])
-            console.log(data[0])
-            return 'hay'
-
-          }
-
-          //           function(data, textStatus, request){
-          //      alert(request.getResponseHeader('some_header'));
-          // },
-      });
+    var requestColophon = function() {
+        return $.ajax({
+            url: 'http://wdka-pp.template-studio.nl/wp-json/wp/v2/posts?filter[category_name]=wdka-pp-colophon'
+        });
     }
 
     var getSplashContent = function() {
-
-
+        this.requestColophon().success(function(data) {
+            $("#splashIntro").append(data[0].content.rendered)
+        }).error(function() {
+            console.log('error')
+            $("#splashIntro").append('There was an error!')
+        });
     }
 
     var makeSplashContainer = function() {
@@ -81,6 +72,7 @@ var splashFunctions = (function() {
         this.handleEnterEvent()
     }
     return {
+        requestColophon: requestColophon,
         getSplashContent: getSplashContent,
         makeSplashContainer: makeSplashContainer,
         initSplash: initSplash,

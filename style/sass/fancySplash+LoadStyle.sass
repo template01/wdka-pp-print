@@ -1,9 +1,8 @@
 #splash
-
   #splashLeftContent
     width: 80%
     float: left
-    padding: $paddingMain/2
+    padding: $paddingMain / 2
 
     #splashHeader
       position: fixed
@@ -14,17 +13,16 @@
       height: calc(22px + #{$paddingMain})
 
     #splashIntro
-
-
-
       margin-top: calc(22px + #{$paddingMain})
 
       .splashColRight,
       .splashColLeft
         &.clearRight
           margin-right: 50%
+
         &.clearLeft
           margin-left: 50%
+
         width: 50%
         float: left
         padding: calc(22px + #{$paddingMain})
@@ -36,14 +34,17 @@
       h1
         font-size: 5vw
         color: $sectionPrefaceColor
+
         br
           display: block
 
   #splashRightContent
     #splashTopContent
       cursor: pointer
+
       &:hover
         background: $selectedNotColor
+
         a
           color: $tableTertiaryColor
           border-bottom: 1px solid $tableTertiaryColor
@@ -51,10 +52,11 @@
     #splashRightContentLogos
       position: absolute
       bottom: 0
-      padding: $paddingMain/2
+      padding: $paddingMain / 2
+
       img
         &:first-of-type
-          margin-right: $paddingMain/2
+          margin-right: $paddingMain / 2
 
         width: calc(50% - (#{$paddingMain}/4))
         float: left
