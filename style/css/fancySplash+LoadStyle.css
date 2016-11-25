@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$paddingMain".
-        on line 7 of style/sass/fancySplash+LoadStyle.sass
+        on line 6 of style/sass/fancySplash+LoadStyle.sass
 
+1: #splash
 2: 
 3:   #splashLeftContent
 4:     width: 80%
 5:     float: left
-6: 
-7:     padding: $paddingMain/2
-8: 
-9:     #splashHeader
-10:       position: fixed
-11:       width: 80%
-12:       background: $tablePrimaryColor
+6:     padding: $paddingMain/2
+7: 
+8:     #splashHeader
+9:       position: fixed
+10:       width: 80%
+11:       background: $tablePrimaryColor
 
 Backtrace:
-style/sass/fancySplash+LoadStyle.sass:7
+style/sass/fancySplash+LoadStyle.sass:6
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/operation.rb:64:in `_perform'
@@ -80,4 +80,4 @@ style/sass/fancySplash+LoadStyle.sass:7
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$paddingMain\".\A         on line 7 of style/sass/fancySplash+LoadStyle.sass\A \A 2: \A 3:   #splashLeftContent\A 4:     width: 80%\A 5:     float: left\A 6: \A 7:     padding: $paddingMain/2\A 8: \A 9:     #splashHeader\A 10:       position: fixed\A 11:       width: 80%\A 12:       background: $tablePrimaryColor"; }
+  content: "Error: Undefined variable: \"$paddingMain\".\A         on line 6 of style/sass/fancySplash+LoadStyle.sass\A \A 1: #splash\A 2: \A 3:   #splashLeftContent\A 4:     width: 80%\A 5:     float: left\A 6:     padding: $paddingMain/2\A 7: \A 8:     #splashHeader\A 9:       position: fixed\A 10:       width: 80%\A 11:       background: $tablePrimaryColor"; }
