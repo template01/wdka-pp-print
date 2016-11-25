@@ -1,5 +1,5 @@
 .section-preface
-  p, ul, ol, h1, h2, h3, h4, h5, h6
+  p, ul, ol, h1, h2, h3, h4, h5, h6, dl, pre
     color: $sectionPrefaceColor
   a, u
     border-bottom: 1px solid $sectionPrefaceColor
@@ -16,6 +16,8 @@
 .section-social-part,
 .section-social-part .tablePostContent
   background: #cceffc
+  &:root
+    background: pink
 
 
 #leftContent
@@ -26,7 +28,6 @@
       p, ul, ol
         font-size: $defaultFontSizeSmall
         line-height: 1.35
-        letter-spacing: 0.05em
       h1
         font-size: 14pt
       h2
@@ -35,7 +36,6 @@
       h4
         font-size: 8.5pt
         font-weight: 400
-        letter-spacing: 0.05em
         margin-top: -10px
         line-height: 1.35
       -webkit-column-count: 3

@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$tableTertiaryColor".
-        on line 45 of style/sass/fancyPrintPreview_readPreviewStyle.sass
+        on line 10 of style/sass/fancyPrintPreview_readPreviewStyle.sass
 
-40:     margin-top: 40px
-41:     display: none
-42:     position: absolute
-43:     // min-height: 100vh
-44:     left: 0
-45:     background: $tableTertiaryColor
-46:     // width: 100%
-47:     width: 80%
-48:     // padding: 80px 40px 1cm 1cm
-49: 
-50:     .tablePost
+5:     margin-top: 40px
+6:     display: none
+7:     position: absolute
+8:     // min-height: 100vh
+9:     left: 0
+10:     background: $tableTertiaryColor
+11:     // width: 100%
+12:     width: 80%
+13: 
+14:     .tablePost
+15:       display: flex
 
 Backtrace:
-style/sass/fancyPrintPreview_readPreviewStyle.sass:45
+style/sass/fancyPrintPreview_readPreviewStyle.sass:10
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
@@ -78,4 +78,4 @@ style/sass/fancyPrintPreview_readPreviewStyle.sass:45
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$tableTertiaryColor\".\A         on line 45 of style/sass/fancyPrintPreview_readPreviewStyle.sass\A \A 40:     margin-top: 40px\A 41:     display: none\A 42:     position: absolute\A 43:     // min-height: 100vh\A 44:     left: 0\A 45:     background: $tableTertiaryColor\A 46:     // width: 100%\A 47:     width: 80%\A 48:     // padding: 80px 40px 1cm 1cm\A 49: \A 50:     .tablePost"; }
+  content: "Error: Undefined variable: \"$tableTertiaryColor\".\A         on line 10 of style/sass/fancyPrintPreview_readPreviewStyle.sass\A \A 5:     margin-top: 40px\A 6:     display: none\A 7:     position: absolute\A 8:     // min-height: 100vh\A 9:     left: 0\A 10:     background: $tableTertiaryColor\A 11:     // width: 100%\A 12:     width: 80%\A 13: \A 14:     .tablePost\A 15:       display: flex"; }

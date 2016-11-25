@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$defaultFontSizeParagraph".
-        on line 7 of style/sass/fancyDefaultTypoStyle.sass
+        on line 6 of style/sass/fancyDefaultTypoStyle.sass
 
+1: body
 2:   font-family: 'TeXGyreAdventor', sans-serif
 3:   font-stretch: expanded
-4:   letter-spacing: 0.1pt
-5: 
-6: p, ul, ol
-7:   font-size: $defaultFontSizeParagraph
-8:   -webkit-hyphens: auto
-9:   -moz-hyphens: auto
-10:   -ms-hyphens: auto
-11:   hyphens: auto
-12:   letter-spacing: 0.05em
+4: 
+5: p, ul, ol
+6:   font-size: $defaultFontSizeParagraph
+7:   -webkit-hyphens: auto
+8:   -moz-hyphens: auto
+9:   -ms-hyphens: auto
+10:   hyphens: auto
+11:   letter-spacing: 0.05em
 
 Backtrace:
-style/sass/fancyDefaultTypoStyle.sass:7
+style/sass/fancyDefaultTypoStyle.sass:6
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
@@ -67,4 +67,4 @@ style/sass/fancyDefaultTypoStyle.sass:7
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$defaultFontSizeParagraph\".\A         on line 7 of style/sass/fancyDefaultTypoStyle.sass\A \A 2:   font-family: 'TeXGyreAdventor', sans-serif\A 3:   font-stretch: expanded\A 4:   letter-spacing: 0.1pt\A 5: \A 6: p, ul, ol\A 7:   font-size: $defaultFontSizeParagraph\A 8:   -webkit-hyphens: auto\A 9:   -moz-hyphens: auto\A 10:   -ms-hyphens: auto\A 11:   hyphens: auto\A 12:   letter-spacing: 0.05em"; }
+  content: "Error: Undefined variable: \"$defaultFontSizeParagraph\".\A         on line 6 of style/sass/fancyDefaultTypoStyle.sass\A \A 1: body\A 2:   font-family: 'TeXGyreAdventor', sans-serif\A 3:   font-stretch: expanded\A 4: \A 5: p, ul, ol\A 6:   font-size: $defaultFontSizeParagraph\A 7:   -webkit-hyphens: auto\A 8:   -moz-hyphens: auto\A 9:   -ms-hyphens: auto\A 10:   hyphens: auto\A 11:   letter-spacing: 0.05em"; }

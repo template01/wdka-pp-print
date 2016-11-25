@@ -1,7 +1,6 @@
 body
   font-family: 'TeXGyreAdventor', sans-serif
   font-stretch: expanded
-  letter-spacing: 0.1pt
 
 p, ul, ol
   font-size: $defaultFontSizeParagraph
@@ -16,7 +15,7 @@ p, ul, ol
 a, u
   text-decoration: none
   color: black
-  font-size: $defaultFontSizeSmall
+  font-size: 85%
   border-bottom: 1px solid black
 
 .footnoteRef 
@@ -40,19 +39,16 @@ ul
   list-style: disc inside none
   padding: 0
 
+h1, h2, h3, h4, h5, h6
+  letter-spacing: 0.025em
+
 h1
   line-height: 1.1
-
-h1, h2, h3
-  letter-spacing: 0.025em
+  font-size: 25pt
+  margin: 0
 
 h2, h3, h4
   line-height: 1.2
-
-h1
-  font-size: 25pt
-  margin: 0
-  letter-spacing: initial
 
 h1, h2, .basketItem, .tablePostMeta
   br
@@ -70,8 +66,7 @@ h6
 
 code, kbd, pre, samp
   font-family: 'TeXGyreAdventor', sans-serif
-  font-size: $defaultFontSizeSmall
-  letter-spacing: 0.2em
+  font-size: 85%
   white-space: pre-wrap
   white-space: -moz-pre-wrap
   white-space: -pre-wrap
@@ -88,7 +83,3 @@ code, kbd, pre, samp
 
   h1
     font-size: 18pt
-
-  h1, h2, h3
-    letter-spacing: 0.025em
-
