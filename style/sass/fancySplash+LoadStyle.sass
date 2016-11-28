@@ -18,8 +18,17 @@
         width: 25%
         p
           color: white
-          padding-left: $paddingMain/2
-          padding-right: $paddingMain/2
+          margin-left: $paddingMain/2
+          margin-right: $paddingMain/2
+          display: inline
+          cursor: pointer
+          &:hover
+            border-bottom: 1px solid white
+
+        a
+          color: white
+          font-size: inherit
+          border: 0
 
     #splashIntro
       margin-top: calc(22px + #{$paddingMain})
@@ -76,15 +85,53 @@
 
   #splashRightContent
     background: white
+
+    #splashRightContentDesc
+      margin-top: calc(22px + #{$paddingMain})
+      p
+        // color: blue
+        padding: $paddingMain / 2
+        font-weight: bolder
+        &:first-of-type
+          margin-top: 0
+
+
     #splashTopContent
       cursor: pointer
+      position: absolute
+      z-index: 1 !important
+
+      a
+        -webkit-animation: fadeinout 1.4s
+        animation: fadeinout 1.4s
+        opacity: 1
+        // font-weight: bolder
+        border-bottom: 0px solid $tableTertiaryColor
+        -webkit-animation-iteration-count: 10
+        animation-iteration-count: 10
+
+
+
+
+      @-webkit-keyframes fadeinout
+        50%
+          opacity: 0
+
+
+      @keyframes fadeinout
+        50%
+          opacity: 0
+
 
       &:hover
         background: $selectedNotColor
 
         a
           color: $tableTertiaryColor
-          border-bottom: 1px solid $tableTertiaryColor
+          border-bottom: 0px solid $tableTertiaryColor
+          opacity: 0
+
+
 
     #splashRightContentLogos
       position: absolute
