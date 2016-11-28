@@ -44,8 +44,9 @@ var tableMaker = (function() {
             <div id="postid-` + id + `" class="tablePost section-`+decodeURI(publicationSlug)+`-part section-` + decodeURI(publication_section) + `-wrapper">
               <div class="tablePostMeta">
                 <div class='tablePostMetaItem sort-title'><p>` + decodeURI(title) + `</p></div>
-                <div class='tablePostMetaItem sort-date'><p>` + date + `</p></div>
+
                 <div class='tablePostMetaItem sort-publication'><p>` + decodeURI(publication) + `</p></div>
+                <div class='tablePostMetaItem sort-date'><p>` + date + `</p></div>
                 <div class='tablePostMetaItem sort-selected postSelect' data-id="` + id + `"><p>no</p></div>
               </div>
               <div class="tablePostContent section-` + decodeURI(publication_section) + `">
@@ -53,7 +54,7 @@ var tableMaker = (function() {
                 <div class='sort-excerpt'>` + decodeURI(excerpt) + `</div>
                 <div class='content' data-content="` + content + `"></div>
                 <div class="tablePostReadMode">
-                  <div>Full article <span class="fa fa-newspaper-o "></span></div>
+                  <div><span class="fa fa-newspaper-o "></span> <br>  Read full article </div>
                 </div>
 
               </div>
@@ -69,16 +70,16 @@ var tableMaker = (function() {
           <div id='tableWrapper'>
               <div class="sortingOptions">
                   <button class="sort" data-sort="sort-title">
-                  Sort Title
-                </button>
-                  <button class="sort" data-sort="sort-date">
-                  Sort date
+                  Sort by Title
                 </button>
                   <button class="sort" data-sort="sort-publication">
-                  Sort Publication
+                  Sort by Practice
+                </button>
+                <button class="sort" data-sort="sort-date">
+                  Sort by Date
                 </button>
                 <button class="sort" data-sort="sort-selected">
-                Sort Print Selection
+                Sort by Print Selection
               </button>
               </div>
               <ul id='table' class='list'></ul>

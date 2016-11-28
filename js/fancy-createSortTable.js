@@ -24,7 +24,7 @@ var createSortTable = (function() {
     }
 
     var listExternalSearch = function(searchObject) {
-        $("#rightContent #topContent").append("<input class='search' placeholder='&#xF002; Search...' style='font-family: FontAwesome, TeXGyreAdventor !important'/><div id='toSplash'><span class='fa fa-info' aria-hidden='true'</span></div>")
+        $("#rightContent #topContent").append("<div id='toSplash'><span class='fa fa-info' aria-hidden='true'</span></div><div class='title'>The Art School Reinvented</div><input class='search' placeholder='&#xF002; Search...' style='font-family: FontAwesome, TeXGyreAdventor !important'/>")
         $("#rightContent .search").bind("change paste keyup", function() {
             searchObject.search($(this).val());
         });
