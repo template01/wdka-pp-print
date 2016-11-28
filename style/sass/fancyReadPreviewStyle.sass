@@ -1,7 +1,8 @@
 #leftContent
   #readpreview
     .tablePost
-      padding: 40px 25% 40px 40px
+      min-height: calc(100vh - 22px + #{$paddingMain})
+      padding: $paddingMain*2 25% $paddingMain*2 $paddingMain*2
       .content
         p
           font-size: 12pt
@@ -15,4 +16,4 @@
         .footnotes ol li, .footnotes ul li, .endnotes ol li, .endnotes ul li, .wp-caption-text
           font-size: 9pt
     .section-preface, .section-introduction
-      padding-right: initial
+      padding-right: initial  
