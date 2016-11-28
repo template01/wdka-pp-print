@@ -90,7 +90,7 @@ var tableMaker = (function() {
     var loadList = function() {
         $.ajax({
             type: 'GET',
-            url: 'http://wdka-pp.template-studio.nl/wp-json/wp/v2/posts?filter[category_name]=wdka-pp&per_page=25',
+            url: 'http://wdka-pp.template-studio.nl/backend/wp-json/wp/v2/posts?filter[category_name]=wdka-pp&per_page=25',
             // url: './js/initposts.json',
             async: true,
             success: function(data, textStatus, request) {
@@ -117,7 +117,7 @@ var tableMaker = (function() {
     var loadMoreList = function(page,postList) {
         $.ajax({
             type: 'GET',
-            url: 'http://wdka-pp.template-studio.nl/wp-json/wp/v2/posts?filter[category_name]=wdka-pp&per_page=25&page=' + page,
+            url: 'http://wdka-pp.template-studio.nl/backend/wp-json/wp/v2/posts?filter[category_name]=wdka-pp&per_page=25&page=' + page,
             async: true,
             success: function(data, textStatus, request) {
                 tableMaker.createTableCells(data, $('#table'))
