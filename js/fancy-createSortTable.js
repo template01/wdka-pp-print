@@ -8,7 +8,7 @@ var createSortTable = (function() {
 
       var options = {
           valueNames: [
-              'sort-title', 'sort-excerpt', 'sort-publication', 'sort-date', 'sort-selected'
+              'sort-title', 'sort-excerpt', 'sort-publication','sort-date', {attr: 'data-uniqueTimeStamp' }, 'sort-selected'
           ],
           listClass: 'list'
       };

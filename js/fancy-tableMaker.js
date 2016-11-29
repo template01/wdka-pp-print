@@ -38,6 +38,12 @@ var tableMaker = (function() {
             }
 
             date = element.date
+
+            unique =  new Date(date).getTime()
+            day = new Date(date).getDay()
+            month = new Date(date).getMonth()
+            year = new Date(date).getFullYear()
+            customTimeStamp = day+"/"+month+"/"+year
             // console.log(content)
 
             deployTableInner.append(`
@@ -46,7 +52,7 @@ var tableMaker = (function() {
                 <div class='tablePostMetaItem sort-title'><p>` + decodeURI(title) + `</p></div>
 
                 <div class='tablePostMetaItem sort-publication'><p>` + decodeURI(publication) + `</p></div>
-                <div class='tablePostMetaItem sort-date'><p>` + date + `</p></div>
+                <div class='tablePostMetaItem sort-date'><p data-uniqueTimeStamp="`+ unique +`">` + customTimeStamp + `</p></div>
                 <div class='tablePostMetaItem sort-selected postSelect' data-id="` + id + `"><p>no</p></div>
               </div>
               <div class="tablePostContent section-` + decodeURI(publication_section) + `">
