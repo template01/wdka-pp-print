@@ -21,7 +21,7 @@ var splashFunctions = (function() {
           <div id="splashLeftContent">
             <div id="mobileBlock">
               <h1>
-                OEPS!</br></br>You're on a screen that's too small for the current version of this site.</br></br>Try on your lap or desktop computer :) </br></br>
+                Oops!</br></br>You're viewing this on a screen that is too small for the current version of this website.</br></br>Try again on your laptop or desktop computer. :) </br></br>
               </h1>
               <p>The Art School Reinvented is an ongoing web-to-print publication by <a target="_blank" href="http://www.wdka.nl"> Willem De Kooning Academy</a> where each individual reader can print their own selection. Below you can read more about the project.</p>
             </div>

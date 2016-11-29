@@ -29,8 +29,8 @@ var tourHelpers = (function() {
         });
 
         tour.addStep('example ', {
-            title: "Woah! Your're new around here.",
-            text: "Here's a small guide to how things go down here!",
+            title: "Whoa! You're new around here.",
+            text: "Here's a small guide to how things work down here!",
             attachment: 'middle center',
             targetAttachment: 'middle center',
             targetModifier: 'visible',
@@ -55,7 +55,7 @@ var tourHelpers = (function() {
 
         tour.addStep('example', {
             title: 'View the print layout',
-            text: "When you've made your selection you can view it here",
+            text: "After you've made your selection you can view it here.",
             attachTo: {
                 element: $('#showPrint'),
                 on: 'left'
@@ -65,7 +65,7 @@ var tourHelpers = (function() {
 
         tour.addStep('example', {
             title: 'View the print layout',
-            text: "At some point when your're happy, just use the CTRL+P (CMD+P) shortcut to print your selection. For this function we recomend using Google Chrome.",
+            text: "When you're happy with your selection, just use the CTRL+P (CMD+P) shortcut to print your selection. For this function we recommend using Google Chrome.",
             attachTo: {
                 element: $('#showPrint'),
                 on: 'left'
