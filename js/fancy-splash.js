@@ -110,7 +110,7 @@ var splashFunctions = (function() {
     var pauseDescAnimation = function(){
       window.setTimeout(function(){
         $("#splashRightContentDesc").removeClass('animated').removeClass('slideInDown')
-      },2000)
+      },3500)
     }
 
     var initSplash = function() {
