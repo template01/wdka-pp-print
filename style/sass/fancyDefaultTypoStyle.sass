@@ -8,14 +8,20 @@ input, button
 
 p, ul, ol
   font-size: $defaultFontSizeParagraph
-  -webkit-hyphens: auto
-  -moz-hyphens: auto
-  -ms-hyphens: auto
-  hyphens: auto
-  // letter-spacing: 0.05em
   line-height: $defaultLineHeight
   color: $tablePrimaryColor
 
+code, kbd, pre, samp
+  font-family: 'TeXGyreAdventor', sans-serif
+  font-size: 85%
+  white-space: pre-wrap
+  white-space: -moz-pre-wrap
+  white-space: -pre-wrap
+  white-space: -o-pre-wrap
+  word-wrap: break-word
+
+.sort-excerpt p
+  font-size: 12pt !important
 
 a, u
   text-decoration: none
@@ -70,22 +76,3 @@ h3
 
 h6
 
-code, kbd, pre, samp
-  font-family: 'TeXGyreAdventor', sans-serif
-  font-size: 85%
-  white-space: pre-wrap
-  white-space: -moz-pre-wrap
-  white-space: -pre-wrap
-  white-space: -o-pre-wrap
-  word-wrap: break-word
-
-.sort-excerpt p
-  font-size: 12pt !important
-
-@media print
-
-  p, ul, ol
-    font-size: 10,5
-
-  h1
-    font-size: 18pt
