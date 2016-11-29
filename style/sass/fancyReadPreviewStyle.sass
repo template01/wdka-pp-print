@@ -1,12 +1,16 @@
+// styles specific to the read preview
+
 #leftContent
   #readpreview
     .tablePost
       min-height: calc(100vh - 22px + #{$paddingMain})
       padding: $paddingMain*2 25% $paddingMain*2 $paddingMain*2
       .content
-        p
+        p, ul, ol
           font-size: 12pt
           line-height: 1.5
+        h1
+          font-size: 25pt
         img
           width: 40%
         .wp-caption
