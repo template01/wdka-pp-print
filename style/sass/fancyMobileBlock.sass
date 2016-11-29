@@ -1,0 +1,71 @@
+@media screen and (nin-width: 1240px)
+  #mobileBlock
+    display: none
+
+
+@media screen and (max-width: 1240px)
+  #mobileBlock
+    display: block
+    background: blue
+    min-height: calc(100vh - 20px)
+    padding: 40px
+
+    *
+      color: white
+      border-color: white
+    h1
+      text-align: center
+      font-size: 48px
+
+      br
+        display: block
+
+  #splashHeader
+    display: none !important
+  #rightContent
+    display: none !important
+  #splashTopContent
+    display: none
+
+  #splashRightContentDesc
+    margin-top: 0 !important
+
+  #splashRightContent
+    display: none
+    #splashRightContentLogos
+      position: relative !important
+      img
+        width: 20% !important
+
+  #splashLeftContent
+    width: 100% !important
+    #splashIntro
+      .fixedTitle
+        margin-top: 0px
+        position: relative !important
+        width: 100% !important
+        .splashColLeft
+          padding-top: 0px !important
+          padding-bottom: 0px !important
+        .splashColRight
+          padding-top: 0px !important
+        h1
+          font-size: 48px !important
+      .afterFixedTitle
+        margin-top: 80px !important
+  #splashIntro
+    *:not(h1)
+      font-size: 16px !important
+    .splashColRight
+      width: 100% !important
+      font-size: 12px !important
+      padding-left: 10px !important
+      padding-right: 10px !important
+    .splashColLeft
+      width: 100% !important
+      font-size: 12px !important
+      padding-left: 10px !important
+      padding-right: 10px !important
+
+  .clearRight
+    margin-right: 0px !important

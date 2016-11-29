@@ -19,11 +19,18 @@ var splashFunctions = (function() {
     var makeSplashContainer = function() {
         $('#mainApp').append(`<div id="splash">
           <div id="splashLeftContent">
+            <div id="mobileBlock">
+              <h1>
+                OEPS!</br></br>You're on a screen that's too small for the current version of this site.</br></br>Try on your lap or desktop computer :) </br></br>
+              </h1>
+              <p>The Art School Reinvented is an ongoing web-to-print publication by <a target="_blank" href="http://www.wdka.nl"> Willem De Kooning Academy</a> where each individual reader can print their own selection. Below you can read more about the project.</p>
+            </div>
+
             <div id="splashHeader">
-              <div ><p><a target="_blank" href="http://www.wdka.nl">Willem de Kooning Academy</a></p></div>
-              <div class="toTop"><p>The Art School Reinvented</p></div>
-              <div class="toLastLeft"><p>Hybrid Publishing</p></div>
-              <div class="toLastRight"><p>Colophon</p></div>
+              <div ><p><span><a target="_blank" href="http://www.wdka.nl"></a></span></p></div>
+              <div class="toTop"><p><span>The Art School Reinvented</span></p></div>
+              <div class="toLastLeft"><p><span>Hybrid Publishing</span></p></div>
+              <div class="toLastRight"><p><span>Colophon</span></p></div>
 
             </div>
             <div id="splashIntro">
