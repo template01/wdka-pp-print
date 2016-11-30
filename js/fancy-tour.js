@@ -20,7 +20,8 @@ var tourHelpers = (function() {
 
     var tableTour = function() {
 
-        if(getCookie("tourEverRan").length==0){
+
+        if(getCookie("tourEverRan").length!=0){
 
         let tour = new Shepherd.Tour({
             defaults: {
@@ -73,7 +74,25 @@ var tourHelpers = (function() {
             advanceOn: '.docs-link click'
         });
 
+        showMyOverlay()
         tour.start();
+
+
+              function showMyOverlay() {
+                $("#mainApp").css({'opacity':'0.4','pointer-events':'none'})
+                $("body").css({'background':'gray'})
+
+              }
+              function hideMyOverlay() {
+                $("#mainApp").css({'opacity':'1','pointer-events':''})
+                $("body").css({'background':''})
+
+
+              }
+
+
+
+        Shepherd.activeTour.on('complete',function(){hideMyOverlay()})
 
         document.cookie = "tourEverRan=true";
 
