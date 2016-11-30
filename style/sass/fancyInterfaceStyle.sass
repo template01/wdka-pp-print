@@ -300,19 +300,43 @@ button, input
           display: none
         &:hover
           &:after
-            content: "Click to select" !important
+            font-family: "FontAwesome"
+            content: "\f00c"
+          &:before
+            font-weight: bolder
+            color: $tablePrimaryColor
+            content: "Click to add "
+
         &:after
           color: $tablePrimaryColor
-          content: "✔"
+          font-family: "FontAwesome"
+          content: "\f178"
+        &:before
+          font-weight: bolder
+          color: $tablePrimaryColor
+          content: "Add to selection "
+
 
         &.selected
           background: $selectedColor
           &:hover
             &:after
-              content: "Click to deselect" !important
+              color: white
+              font-family: "FontAwesome"
+              content: "\f00d"
+            &:before
+              font-weight: bolder
+              color: white
+              content: "Click to remove "
+
           &:after
-            color: $tableTertiaryColor
-            content: "✘"
+            color: white
+            font-family: "FontAwesome"
+            content: "\f00c"
+          &:before
+            font-weight: bolder
+            color: white
+            content: "Selected "
     p
       margin: 0px
 
