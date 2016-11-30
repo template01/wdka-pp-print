@@ -21,7 +21,7 @@ var tourHelpers = (function() {
     var tableTour = function() {
 
 
-        if(getCookie("tourEverRan").length!=0){
+        if(getCookie("tourEverRan").length==0){
 
         let tour = new Shepherd.Tour({
             defaults: {
