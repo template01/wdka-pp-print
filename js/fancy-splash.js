@@ -2,7 +2,7 @@ var splashFunctions = (function() {
 
     var requestColophon = function() {
         return $.ajax({
-            url: 'http://wdka-pp.template-studio.nl/backend/wp-json/wp/v2/posts?filter[category_name]=wdka-pp-colophon'
+            url: fancyconfig.apiUrl+'posts?filter[category_name]=wdka-pp-colophon'
         });
     }
 
